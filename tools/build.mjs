@@ -17,6 +17,8 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { transform } from 'esbuild';
+import { createHash } from 'node:crypto';
+import { readFileSync } from 'node:fs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const src = path.join(root, 'src');
@@ -52,6 +54,14 @@ function attr(value) {
   return String(value).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;');
 }
 
+// Cache-busting: every asset URL gets ?v=<content hash>, so a browser can never
+// keep showing an old image after it has been replaced under the same name.
+const hashes = new Map();
+function v(rel) {
+  if (!hashes.has(rel)) hashes.set(rel, createHash('sha1').update(readFileSync(path.join(root, rel))).digest('hex').slice(0, 8));
+  return `${rel}?v=${hashes.get(rel)}`;
+}
+
 function picture(args) {
   const tokens = args.match(/(\w[\w-]*)="([^"]*)"|[\w-]+/g) ?? [];
   const slot = tokens.shift();
@@ -66,14 +76,14 @@ function picture(args) {
   const [rw, rh] = cfg.ratio;
   const max = Math.max(...cfg.widths);
   const mid = cfg.widths[Math.min(1, cfg.widths.length - 1)];
-  const set = (ext) => cfg.widths.map((w) => `assets/photos/${slot}-${w}.${ext} ${w}w`).join(', ');
+  const set = (ext) => cfg.widths.map((w) => `${v(`assets/photos/${slot}-${w}.${ext}`)} ${w}w`).join(', ');
   const sizes = opts.sizes ?? '100vw';
   const alt = opts.alt ?? cfg.alt;
   const loading = opts.eager ? 'fetchpriority="high"' : 'loading="lazy"';
   const cls = opts.class ? ` class="${attr(opts.class)}"` : '';
   // pos="50% 20%" sets object-position, for images that a layout crops further.
   const style = opts.pos ? ` style="object-position:${attr(opts.pos)}"` : '';
-  return `<picture><source type="image/avif" srcset="${set('avif')}" sizes="${attr(sizes)}"><img${cls}${style} src="assets/photos/${slot}-${mid}.webp" srcset="${set('webp')}" sizes="${attr(sizes)}" width="${max}" height="${Math.round((max * rh) / rw)}" alt="${attr(alt)}" ${loading} decoding="async"></picture>`;
+  return `<picture><source type="image/avif" srcset="${set('avif')}" sizes="${attr(sizes)}"><img${cls}${style} src="${v(`assets/photos/${slot}-${mid}.webp`)}" srcset="${set('webp')}" sizes="${attr(sizes)}" width="${max}" height="${Math.round((max * rh) / rw)}" alt="${attr(alt)}" ${loading} decoding="async"></picture>`;
 }
 
 async function render(text, vars, depth = 0) {
@@ -98,7 +108,8 @@ async function minifyAssets() {
   for (const [from, to, loader] of jobs) {
     const code = await fs.readFile(path.join(root, from), 'utf8');
     const out = await transform(code, { loader, minify: true, target: loader === 'css' ? ['chrome100', 'safari15', 'firefox100'] : 'es2019' });
-    await fs.writeFile(path.join(root, to), out.code);
+    const versioned = loader === 'css' ? out.code.replace(/url\((['"]?)\.\.\/(img|fonts)\/([^'")?]+)\1\)/g, (m, q, dir, file) => `url(${q}../${v(`assets/${dir}/${file}`).slice('assets/'.length)}${q})`) : out.code;
+    await fs.writeFile(path.join(root, to), versioned);
     console.log(`minified ${from} -> ${to} (${(code.length / 1024).toFixed(1)}kB -> ${(out.code.length / 1024).toFixed(1)}kB)`);
   }
 }
@@ -123,6 +134,7 @@ async function main() {
     if (meta.base) vars.baseTag = `<base href="${meta.base}">`;
     vars.fullTitle = meta.title ? `${meta.title} · ${site.siteName}` : `${site.siteName} · Riding Lessons, Boarding & Camp in Hydes, MD`;
     let html = await render(body, vars);
+    html = html.replace(/(href|src)="(assets\/(?:css|js|img|fonts|photos)\/[^"?' +]+)"/g, (m, a, rel) => `${a}="${v(rel)}"`);
     if (meta.nav) {
       html = html.replace(new RegExp(`data-nav="${meta.nav}"`, 'g'), `data-nav="${meta.nav}" aria-current="page"`);
     }
