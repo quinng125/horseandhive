@@ -18,7 +18,6 @@
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="icon" href="assets/img/favicon-32.png" sizes="32x32" type="image/png">
   <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
   <link rel="manifest" href="site.webmanifest">
@@ -56,7 +55,6 @@
 
 <body>
 <svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
-  <symbol id="i-mark" viewBox="0 0 40 44"><path d="M20 1.8 37.6 11.9v20.2L20 42.2 2.4 32.1V11.9z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M13.2 13.5v8.3a6.8 6.8 0 0 0 13.6 0v-8.3" fill="none" stroke="currentColor" stroke-width="3.6"/><path d="M11.2 13.4h4.1M24.7 13.4h4.1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="20" cy="9.2" r="1.5" fill="currentColor"/></symbol>
   <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
   <symbol id="i-arrow-left" viewBox="0 0 24 24"><path d="M20 12H5M11 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
   <symbol id="i-arrow-up-right" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
@@ -85,7 +83,7 @@
 <header class="site-header">
   <div class="container header-inner">
     <a class="brand" href="./">
-      <svg class="brand-mark" aria-hidden="true"><use href="#i-mark"/></svg>
+      <span class="brand-mark" aria-hidden="true"></span>
       <span class="brand-text">
         <span class="brand-name">Horse <em>&amp;</em> Hive</span>
         <span class="brand-sub">Farm · Hydes, MD</span>
@@ -112,7 +110,7 @@
 <div class="mobile-menu" id="mobile-menu" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Menu">
   <div class="mobile-menu-top">
     <a class="brand" href="./">
-      <svg class="brand-mark" aria-hidden="true"><use href="#i-mark"/></svg>
+      <span class="brand-mark" aria-hidden="true"></span>
       <span class="brand-text"><span class="brand-name">Horse <em>&amp;</em> Hive</span><span class="brand-sub">Farm · Hydes, MD</span></span>
     </a>
     <button class="mobile-menu-close" type="button"><span class="visually-hidden">Close menu</span><svg aria-hidden="true"><use href="#i-close"/></svg></button>
@@ -147,12 +145,10 @@
     <div class="container">
       <div class="note" style="margin-bottom:2.5rem">
         <svg aria-hidden="true"><use href="#i-info"/></svg>
-        <p>To add or replace a photo, save it as <code>photos/original/&lt;slot&gt;.jpg</code> and run <code>npm run photos</code>. Slots still showing illustrations are listed under “Waiting for a photo”.</p>
+        <p>Every photo on the site is a real Horse &amp; Hive photo. To replace one, save the new photo as <code>photos/original/&lt;slot&gt;.jpg</code> and run <code>npm run photos -- &lt;slot&gt;</code>, then <code>npm run build</code>.</p>
       </div>
       <h2 class="h2" style="margin-bottom:1.5rem">Upgraded photos</h2>
-      <div class="lab-grid" id="lab-photos"><p class="muted">No photos yet. Every slot is still using its illustration.</p></div>
-      <h2 class="h2 mt-4" style="margin-bottom:1.5rem">Waiting for a photo</h2>
-      <div class="lab-grid" id="lab-pending"></div>
+      <div class="lab-grid" id="lab-photos"></div>
     </div>
   </section>
 </main>
@@ -161,36 +157,22 @@
   (function () {
     var data = window.HH_PHOTOS || {};
     var photos = document.getElementById('lab-photos');
-    var pending = document.getElementById('lab-pending');
-    var hasPhoto = false;
     Object.keys(data).forEach(function (slot) {
       var s = data[slot];
-      var w = s.widths[s.widths.length - 1];
-      var mid = s.widths[Math.min(1, s.widths.length - 1)];
       var item = document.createElement('div');
       item.className = 'lab-item';
-      if (s.source === 'photo') {
-        if (!hasPhoto) photos.innerHTML = '';
-        hasPhoto = true;
-        item.innerHTML =
-          '<div class="compare"><img src="assets/photos/' + slot + '-before.jpg" alt="Original photo for ' + slot + '">' +
-          '<div class="compare-after"><img src="assets/photos/' + slot + '-after.jpg" alt="Upgraded photo for ' + slot + '"></div>' +
-          '<span class="compare-handle"></span><span class="compare-label compare-label--before">Before</span><span class="compare-label compare-label--after">After</span>' +
-          '<input type="range" min="0" max="100" value="50" aria-label="Compare before and after for ' + slot + '"></div>' +
-          '<p><code>' + slot + '</code> · from <code>' + s.original + '</code></p>';
-        photos.appendChild(item);
-        var el = item.querySelector('.compare');
-        var range = el.querySelector('input');
-        var set = function () { el.style.setProperty('--pos', range.value + '%'); };
-        range.addEventListener('input', set);
-        set();
-      } else {
-        item.className = 'lab-pending';
-        item.innerHTML = '<img src="assets/photos/' + slot + '-' + mid + '.webp" alt="" loading="lazy">' +
-          '<strong><code>' + slot + '</code></strong><span class="muted">' + s.ratio[0] + ':' + s.ratio[1] + ' · ' + s.alt + '</span>' +
-          '<span class="form-small">Save as <code>photos/original/' + slot + '.jpg</code> (at least ' + w + 'px wide)</span>';
-        pending.appendChild(item);
-      }
+      item.innerHTML =
+        '<div class="compare"><img src="assets/photos/' + slot + '-before.jpg" alt="Original photo for ' + slot + '" loading="lazy">' +
+        '<div class="compare-after"><img src="assets/photos/' + slot + '-after.jpg" alt="Upgraded photo for ' + slot + '" loading="lazy"></div>' +
+        '<span class="compare-handle"></span><span class="compare-label compare-label--before">Before</span><span class="compare-label compare-label--after">After</span>' +
+        '<input type="range" min="0" max="100" value="50" aria-label="Compare before and after for ' + slot + '"></div>' +
+        '<p><code>' + slot + '</code> · ' + s.alt + '</p>';
+      photos.appendChild(item);
+      var el = item.querySelector('.compare');
+      var range = el.querySelector('input');
+      var set = function () { el.style.setProperty('--pos', range.value + '%'); };
+      range.addEventListener('input', set);
+      set();
     });
   })();
 </script>
@@ -209,7 +191,7 @@
     <div class="footer-grid">
       <div>
         <a class="brand" href="./">
-          <svg class="brand-mark" aria-hidden="true"><use href="#i-mark"/></svg>
+          <span class="brand-mark" aria-hidden="true"></span>
           <span class="brand-text"><span class="brand-name">Horse <em>&amp;</em> Hive</span><span class="brand-sub">Farm · Hydes, MD</span></span>
         </a>
         <p class="mt-2">Riding lessons, boarding, camp and a little honey, at the corner of Long Green Pike and Hydes Road.</p>

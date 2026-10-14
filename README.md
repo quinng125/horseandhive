@@ -10,7 +10,7 @@ It's a fast, static site (plain HTML, CSS and a little JavaScript) with no frame
 - **Built to convert.** Every page leads to one clear next step, "Book your first lesson". There's a sticky call/book bar on phones, a three-step "first ride" path, visible pricing, and an enquiry form that pre-selects the right topic from whichever button was clicked.
 - **Pages:** Home, Lessons, Boarding, Camp, Our Farm (story, team, herd, honey), Visit & Contact, a 404, and an owner-only **Photo Lab**.
 - **Photo upgrade pipeline.** Drop in phone photos and every image gets the same professional treatment: smart-cropped to the layout, auto-levelled, warmly color-graded, sharpened, stripped of GPS metadata, and exported as AVIF and WebP in several sizes.
-- **Quality:** in local Lighthouse runs (simulated mobile, gzip enabled), it scores 90–91 for performance and 100 for accessibility, best practices and SEO. It has local-business structured data, social share cards, a sitemap, reduced-motion support, full keyboard navigation and self-hosted fonts.
+- **Quality:** in local Lighthouse runs (simulated mobile, gzip enabled), it scores 89–91 for performance and 100 for accessibility, best practices and SEO. It has local-business structured data, social share cards, a sitemap, reduced-motion support, full keyboard navigation and self-hosted fonts.
 
 ## Quick start
 
@@ -25,7 +25,7 @@ The built `*.html` files in the repository root are the live site. Edit pages in
 
 ## Photos
 
-Every image on the site is a "slot" defined in `photos/slots.json`. The farm's own photos, taken from the media library of the previous horseandhive.com, live in `photos/original/<slot>.jpg`. Each one is run through the photo pipeline, which:
+Every image on the site is a real Horse & Hive photo, taken from the media library of the current horseandhive.com. Each one is a "slot" defined in `photos/slots.json`, with its original in `photos/original/<slot>.jpg`. Each one is run through the photo pipeline, which:
 
 - crops it to the layout's shape, around the subject or around a focus point set in `slots.json`
 - auto-levels it and applies a film-style grade: gentle contrast, calmer phone-camera greens, warm highlights and soft matte blacks
@@ -39,23 +39,29 @@ To replace or add a photo:
 3. Run `npm run photos -- <slot>` (or `npm run photos` for all), then `npm run build`.
 4. Open `/photo-lab.html` to drag a before/after slider over every photo.
 
-If a slot has no original, the pipeline falls back to a generated illustration so the page never shows a gap.
+Every slot must have a real photo. If an original is missing, `npm run photos` stops with an error and leaves that slot's existing images alone, so no placeholder or drawing can ever reach the site.
 
-| Slot | Shape | Where it appears | Current photo |
-| --- | --- | --- | --- |
-| `hero` | 3:2 | Homepage hero | The lane between a horse's ears |
-| `story` | 4:5 | Homepage welcome, Our Farm | The barn at sunset |
-| `lessons`, `intro`, `camp`, `boarding` | 4:5 | Homepage program cards | Lesson, high five, young riders, horses by the barn |
-| `honey` | 1:1 | Hive section | The farm's hens (add a beehive or honey photo here when available) |
-| `facility-grass`, `facility-stone`, `facility-indoor`, `facility-dressage`, `facility-track`, `facility-pasture` | 4:3 | "The grounds" tiles | Each arena and area |
-| `horse-archie` … `horse-tatertot` (12) | 4:5 | Meet the herd | Each lesson horse's portrait |
-| `team-lina`, `team-merideth`, `team-victoria` | 1:1 | Our Farm → team | Each instructor riding |
-| `banner` | 21:9 | Homepage camp banner | Riders at sunset |
-| `page-lessons`, `page-boarding`, `page-camp`, `page-about`, `page-contact` | 16:9 | Top of each page | Wide farm photos |
+| Slots | Where they appear |
+| --- | --- |
+| `hero`, `banner`, `page-*` | Full-width photos behind text: homepage hero, camp banner, top of each page |
+| `story`, `lessons`, `intro`, `camp`, `boarding`, `card-companion`, `card-clinics` | Homepage welcome and program cards |
+| `honey` | Hive section (the farm's hens; no beehive photo exists yet) |
+| `facility-*` (6) | "The grounds" tiles on Home and Boarding |
+| `horse-*` (12) | Meet the herd, one portrait per lesson horse |
+| `team-lina`, `team-merideth`, `team-victoria` | Our Farm → team |
+| `value-*`, `about-*` | Our Farm → values and "more at the farm" |
+| `lessons-companion`, `lessons-wear`, `lessons-clinic` | Lessons page sections |
+| `boarding-tack`, `boarding-trainer` | Boarding amenities |
+| `camp-1` … `camp-8` | Camp page gallery |
+| `contact-sign` | Contact page: the entrance sign |
 
 The best upgrades from here: a real beehive or honey photo, a higher-resolution hero (at least 2400px wide), and a few golden-hour shots of the herd.
 
 To change the look of every photo at once, edit the `grade` settings at the top of `tools/photos.mjs`. Film grain is added by a tiny tiled texture in CSS rather than baked into the files, which keeps the photos small.
+
+## Logo
+
+The header, footer, favicons and share image use the farm's own beehive-and-horseshoe mark (`assets/img/logo-mark.png`, extracted from `photos/logo-source.png`). It's a single-color shape recolored with CSS: honey on dark backgrounds, the farm's green on light ones. Run `node tools/brand.mjs` to regenerate the favicons after changing it.
 
 ## Project structure
 
@@ -68,7 +74,7 @@ assets/fonts/     self-hosted Fraunces + Instrument Sans (latin)
 assets/photos/    generated responsive images (don't edit by hand)
 assets/img/       favicons and the social share image
 photos/           slots.json + original/ (source photos)
-tools/            build, photo pipeline, placeholder art, link checker
+tools/            build, photo pipeline, favicons, link checker
 docs/             design research and the owner content checklist
 ```
 
@@ -98,4 +104,4 @@ Read [`docs/CONTENT-CHECKLIST.md`](docs/CONTENT-CHECKLIST.md). It lists every pr
 
 ## Credits
 
-Fonts: [Fraunces](https://fonts.google.com/specimen/Fraunces) and [Instrument Sans](https://fonts.google.com/specimen/Instrument+Sans) (SIL Open Font License). Photography © Horse & Hive Farm. Icons and the logo mark are original to this project.
+Fonts: [Fraunces](https://fonts.google.com/specimen/Fraunces) and [Instrument Sans](https://fonts.google.com/specimen/Instrument+Sans) (SIL Open Font License). Photography and the beehive-and-horseshoe logo mark © Horse & Hive Farm, from the farm's existing website. Interface icons are original to this project.

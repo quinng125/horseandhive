@@ -5,17 +5,17 @@
 //   npm run photos -- hero    process only the named slot(s)
 //
 // For each slot it looks for an original in photos/original/<slot>.(jpg|jpeg|png|webp|tif|tiff).
-// Originals get the house "upgrade": straightened, smart-cropped to the slot's
-// aspect ratio, auto-levelled, colour graded (warm, soft matte), sharpened, given a
-// gentle vignette and a whisper of film grain, stripped of location metadata, and
-// exported as AVIF + WebP at several widths. Slots without an original get the
-// illustrated placeholder from tools/art.mjs so the site never shows a gap.
+// Originals get the house "upgrade": straightened, cropped to the slot's aspect
+// ratio around its focus point, auto-levelled, given a film-style colour grade,
+// sharpened (or softened, for photos behind text), given a gentle vignette,
+// stripped of location metadata, and exported as AVIF + WebP at several widths.
+// Every slot must have a real photo: a missing original is an error, and the
+// slot's existing images are left untouched.
 
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import sharp from 'sharp';
-import { renderArt } from './art.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const slotsFile = path.join(root, 'photos/slots.json');
@@ -150,14 +150,6 @@ async function gradeMaster(file, [rw, rh], maxWidth, focus) {
   return { master: buf, before, w, h };
 }
 
-async function artMaster(art, [rw, rh], maxWidth) {
-  const w = maxWidth;
-  const h = Math.round((maxWidth * rh) / rw);
-  const svg = renderArt(art, w, h);
-  const master = await sharp(Buffer.from(svg)).png().toBuffer();
-  return { master, w, h };
-}
-
 // `soften` (a blur sigma) replaces sharpening for photos that sit behind text
 // overlays: it reads as film softness and roughly halves the file size.
 async function writeSizes(slot, master, [rw, rh], widths, { sharpen, soften, before }) {
@@ -201,22 +193,21 @@ async function main() {
   const manifestFile = path.join(outDir, 'manifest.json');
   const manifest = JSON.parse(await fs.readFile(manifestFile, 'utf8').catch(() => '{}'));
 
+  const missing = [];
   for (const [slot, cfg] of Object.entries(slots)) {
     if (only.length && !only.includes(slot)) continue;
     const original = await findOriginal(slot);
+    if (!original) {
+      missing.push(slot);
+      console.error(`✗ ${slot.padEnd(18)} missing photos/original/${slot}.jpg`);
+      continue;
+    }
     const maxWidth = Math.max(...cfg.widths);
     await cleanSlot(slot);
-    if (original) {
-      const { master, before } = await gradeMaster(original, cfg.ratio, maxWidth, cfg.focus);
-      await writeSizes(slot, master, cfg.ratio, cfg.widths, { sharpen: true, soften: cfg.soften, before });
-      manifest[slot] = { source: 'photo', original: path.relative(root, original), ratio: cfg.ratio, widths: cfg.widths, alt: cfg.alt };
-      console.log(`✓ ${slot.padEnd(18)} photo  ← ${path.relative(root, original)}`);
-    } else {
-      const { master } = await artMaster(cfg.art, cfg.ratio, maxWidth);
-      await writeSizes(slot, master, cfg.ratio, cfg.widths, { sharpen: false });
-      manifest[slot] = { source: 'art', ratio: cfg.ratio, widths: cfg.widths, alt: cfg.alt };
-      console.log(`· ${slot.padEnd(18)} art    (add photos/original/${slot}.jpg to replace)`);
-    }
+    const { master, before } = await gradeMaster(original, cfg.ratio, maxWidth, cfg.focus);
+    await writeSizes(slot, master, cfg.ratio, cfg.widths, { sharpen: true, soften: cfg.soften, before });
+    manifest[slot] = { source: 'photo', original: path.relative(root, original), ratio: cfg.ratio, widths: cfg.widths, alt: cfg.alt };
+    console.log(`✓ ${slot.padEnd(18)} photo  ← ${path.relative(root, original)}`);
   }
   for (const slot of Object.keys(manifest)) if (!slots[slot]) delete manifest[slot];
   // Remove generated images for slots that no longer exist in slots.json.
@@ -227,6 +218,10 @@ async function main() {
   await fs.writeFile(manifestFile, JSON.stringify(manifest, null, 2) + '\n');
   // Also expose the manifest as a script so the Photo Lab page works from file:// too.
   await fs.writeFile(path.join(outDir, 'manifest.js'), `window.HH_PHOTOS = ${JSON.stringify(manifest)};\n`);
+  if (missing.length) {
+    console.error(`\n${missing.length} slot(s) have no photo. Add a real photo for each, then run this again.`);
+    process.exitCode = 1;
+  }
 }
 
 main().catch((err) => {

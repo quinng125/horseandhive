@@ -445,5 +445,291 @@
       800
     ],
     "alt": "Sundae, an Arab cross and the herd’s senior member"
+  },
+  "card-companion": {
+    "source": "photo",
+    "original": "photos/original/card-companion.jpg",
+    "ratio": [
+      4,
+      5
+    ],
+    "widths": [
+      400,
+      560
+    ],
+    "alt": "Young riders grooming a grey horse together in the barn"
+  },
+  "card-clinics": {
+    "source": "photo",
+    "original": "photos/original/card-clinics.jpg",
+    "ratio": [
+      4,
+      5
+    ],
+    "widths": [
+      640,
+      1080
+    ],
+    "alt": "A horsemanship clinic in the indoor arena"
+  },
+  "lessons-companion": {
+    "source": "photo",
+    "original": "photos/original/lessons-companion.jpg",
+    "ratio": [
+      4,
+      5
+    ],
+    "widths": [
+      400,
+      570
+    ],
+    "alt": "Kids in helmets brushing a lesson horse"
+  },
+  "lessons-wear": {
+    "source": "photo",
+    "original": "photos/original/lessons-wear.jpg",
+    "ratio": [
+      4,
+      5
+    ],
+    "widths": [
+      640,
+      860
+    ],
+    "alt": "A young rider in her helmet and boots hugging her grey pony"
+  },
+  "lessons-clinic": {
+    "source": "photo",
+    "original": "photos/original/lessons-clinic.jpg",
+    "ratio": [
+      4,
+      3
+    ],
+    "widths": [
+      640,
+      1080
+    ],
+    "alt": "Riders and their horses at a clinic in the field"
+  },
+  "value-horses": {
+    "source": "photo",
+    "original": "photos/original/value-horses.jpg",
+    "ratio": [
+      4,
+      3
+    ],
+    "widths": [
+      640,
+      1080
+    ],
+    "alt": "Cheek to cheek with a palomino in the barn"
+  },
+  "value-safety": {
+    "source": "photo",
+    "original": "photos/original/value-safety.jpg",
+    "ratio": [
+      4,
+      3
+    ],
+    "widths": [
+      480,
+      800
+    ],
+    "alt": "A young rider in a pink helmet on a Haflinger"
+  },
+  "value-belong": {
+    "source": "photo",
+    "original": "photos/original/value-belong.jpg",
+    "ratio": [
+      4,
+      3
+    ],
+    "widths": [
+      640,
+      1080
+    ],
+    "alt": "Summer campers gathered together on the farm"
+  },
+  "about-clinics": {
+    "source": "photo",
+    "original": "photos/original/about-clinics.jpg",
+    "ratio": [
+      4,
+      3
+    ],
+    "widths": [
+      640,
+      1080
+    ],
+    "alt": "A groundwork clinic with horses in the field"
+  },
+  "about-paint": {
+    "source": "photo",
+    "original": "photos/original/about-paint.jpg",
+    "ratio": [
+      4,
+      3
+    ],
+    "widths": [
+      480,
+      960
+    ],
+    "alt": "Kids with a horse painted in rainbow colors at Paint & Ride"
+  },
+  "about-coaching": {
+    "source": "photo",
+    "original": "photos/original/about-coaching.jpg",
+    "ratio": [
+      4,
+      3
+    ],
+    "widths": [
+      640,
+      1080
+    ],
+    "alt": "A girl hugging her dark bay horse in the field"
+  },
+  "boarding-tack": {
+    "source": "photo",
+    "original": "photos/original/boarding-tack.jpg",
+    "ratio": [
+      4,
+      3
+    ],
+    "widths": [
+      640,
+      1080
+    ],
+    "alt": "The barn aisle with tack trunks and stalls"
+  },
+  "boarding-trainer": {
+    "source": "photo",
+    "original": "photos/original/boarding-trainer.jpg",
+    "ratio": [
+      4,
+      3
+    ],
+    "widths": [
+      640,
+      1080
+    ],
+    "alt": "A trainer working a horse in the indoor arena"
+  },
+  "contact-sign": {
+    "source": "photo",
+    "original": "photos/original/contact-sign.jpg",
+    "ratio": [
+      4,
+      3
+    ],
+    "widths": [
+      480,
+      880
+    ],
+    "alt": "The Horse & Hive Farm sign at 13220 Long Green Pike"
+  },
+  "camp-1": {
+    "source": "photo",
+    "original": "photos/original/camp-1.jpg",
+    "ratio": [
+      2,
+      1
+    ],
+    "widths": [
+      600,
+      810
+    ],
+    "alt": "Campers riding and leading ponies across the field"
+  },
+  "camp-2": {
+    "source": "photo",
+    "original": "photos/original/camp-2.jpg",
+    "ratio": [
+      1,
+      1
+    ],
+    "widths": [
+      400,
+      590
+    ],
+    "alt": "A camper riding a Haflinger along the fence"
+  },
+  "camp-3": {
+    "source": "photo",
+    "original": "photos/original/camp-3.jpg",
+    "ratio": [
+      1,
+      1
+    ],
+    "widths": [
+      400,
+      620
+    ],
+    "alt": "A camper saying hello to a horse in its stall"
+  },
+  "camp-4": {
+    "source": "photo",
+    "original": "photos/original/camp-4.jpg",
+    "ratio": [
+      1,
+      1
+    ],
+    "widths": [
+      400,
+      620
+    ],
+    "alt": "Two campers smiling on the farm"
+  },
+  "camp-5": {
+    "source": "photo",
+    "original": "photos/original/camp-5.jpg",
+    "ratio": [
+      1,
+      1
+    ],
+    "widths": [
+      400,
+      620
+    ],
+    "alt": "A camper riding a palomino over a ground pole"
+  },
+  "camp-6": {
+    "source": "photo",
+    "original": "photos/original/camp-6.jpg",
+    "ratio": [
+      1,
+      1
+    ],
+    "widths": [
+      400,
+      620
+    ],
+    "alt": "Campers cooling off on the water slide"
+  },
+  "camp-7": {
+    "source": "photo",
+    "original": "photos/original/camp-7.jpg",
+    "ratio": [
+      1,
+      1
+    ],
+    "widths": [
+      400,
+      620
+    ],
+    "alt": "A camper leading a chestnut horse over a log"
+  },
+  "camp-8": {
+    "source": "photo",
+    "original": "photos/original/camp-8.jpg",
+    "ratio": [
+      1,
+      1
+    ],
+    "widths": [
+      400,
+      620
+    ],
+    "alt": "Campers at the fence with two horses in fly masks"
   }
 }

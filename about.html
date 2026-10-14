@@ -18,7 +18,6 @@
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="icon" href="assets/img/favicon-32.png" sizes="32x32" type="image/png">
   <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
   <link rel="manifest" href="site.webmanifest">
@@ -56,7 +55,6 @@
 
 <body>
 <svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
-  <symbol id="i-mark" viewBox="0 0 40 44"><path d="M20 1.8 37.6 11.9v20.2L20 42.2 2.4 32.1V11.9z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M13.2 13.5v8.3a6.8 6.8 0 0 0 13.6 0v-8.3" fill="none" stroke="currentColor" stroke-width="3.6"/><path d="M11.2 13.4h4.1M24.7 13.4h4.1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="20" cy="9.2" r="1.5" fill="currentColor"/></symbol>
   <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
   <symbol id="i-arrow-left" viewBox="0 0 24 24"><path d="M20 12H5M11 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
   <symbol id="i-arrow-up-right" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
@@ -85,7 +83,7 @@
 <header class="site-header">
   <div class="container header-inner">
     <a class="brand" href="./">
-      <svg class="brand-mark" aria-hidden="true"><use href="#i-mark"/></svg>
+      <span class="brand-mark" aria-hidden="true"></span>
       <span class="brand-text">
         <span class="brand-name">Horse <em>&amp;</em> Hive</span>
         <span class="brand-sub">Farm · Hydes, MD</span>
@@ -112,7 +110,7 @@
 <div class="mobile-menu" id="mobile-menu" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Menu">
   <div class="mobile-menu-top">
     <a class="brand" href="./">
-      <svg class="brand-mark" aria-hidden="true"><use href="#i-mark"/></svg>
+      <span class="brand-mark" aria-hidden="true"></span>
       <span class="brand-text"><span class="brand-name">Horse <em>&amp;</em> Hive</span><span class="brand-sub">Farm · Hydes, MD</span></span>
     </a>
     <button class="mobile-menu-close" type="button"><span class="visually-hidden">Close menu</span><svg aria-hidden="true"><use href="#i-close"/></svg></button>
@@ -169,10 +167,22 @@
         <p class="eyebrow" data-reveal>What we believe</p>
         <h2 class="h1" id="values-title" data-reveal>Three things <em>we never compromise on.</em></h2>
       </div>
-      <ul class="features features--3" data-reveal>
-        <li><span class="card-icon"><svg aria-hidden="true"><use href="#i-heart"/></svg></span><h3>Horses come first</h3><p>Individual diet, health and training programs for every horse, and at least one rest day a week. Happy horses teach better.</p></li>
-        <li><span class="card-icon"><svg aria-hidden="true"><use href="#i-shield"/></svg></span><h3>Safety, always</h3><p>Approved helmets on every ride, proper footwear, a private first lesson to review farm rules, and trained, certified instructors.</p></li>
-        <li><span class="card-icon"><svg aria-hidden="true"><use href="#i-users"/></svg></span><h3>Every rider belongs</h3><p>From five-year-olds to adults, and from shy first-timers to riders who want to compete: there's a place for you here.</p></li>
+      <ul class="pcards">
+        <li class="pcard" data-reveal>
+          <div class="pcard-photo"><picture><source type="image/avif" srcset="assets/photos/value-horses-640.avif 640w, assets/photos/value-horses-1080.avif 1080w" sizes="(min-width: 760px) 31vw, 92vw"><img src="assets/photos/value-horses-1080.webp" srcset="assets/photos/value-horses-640.webp 640w, assets/photos/value-horses-1080.webp 1080w" sizes="(min-width: 760px) 31vw, 92vw" width="1080" height="810" alt="Cheek to cheek with a palomino in the barn" loading="lazy" decoding="async"></picture></div>
+          <h3>Horses come first</h3>
+          <p>Individual diet, health and training programs for every horse, and at least one rest day a week. Happy horses teach better.</p>
+        </li>
+        <li class="pcard" data-reveal style="--delay:.08s">
+          <div class="pcard-photo"><picture><source type="image/avif" srcset="assets/photos/value-safety-480.avif 480w, assets/photos/value-safety-800.avif 800w" sizes="(min-width: 760px) 31vw, 92vw"><img src="assets/photos/value-safety-800.webp" srcset="assets/photos/value-safety-480.webp 480w, assets/photos/value-safety-800.webp 800w" sizes="(min-width: 760px) 31vw, 92vw" width="800" height="600" alt="A young rider in a pink helmet on a Haflinger" loading="lazy" decoding="async"></picture></div>
+          <h3>Safety, always</h3>
+          <p>Approved helmets on every ride, proper footwear, a private first lesson to review farm rules, and trained, certified instructors.</p>
+        </li>
+        <li class="pcard" data-reveal style="--delay:.16s">
+          <div class="pcard-photo"><picture><source type="image/avif" srcset="assets/photos/value-belong-640.avif 640w, assets/photos/value-belong-1080.avif 1080w" sizes="(min-width: 760px) 31vw, 92vw"><img src="assets/photos/value-belong-1080.webp" srcset="assets/photos/value-belong-640.webp 640w, assets/photos/value-belong-1080.webp 1080w" sizes="(min-width: 760px) 31vw, 92vw" width="1080" height="810" alt="Summer campers gathered together on the farm" loading="lazy" decoding="async"></picture></div>
+          <h3>Every rider belongs</h3>
+          <p>From five-year-olds to adults, and from shy first-timers to riders who want to compete: there's a place for you here.</p>
+        </li>
       </ul>
     </div>
   </section>
@@ -297,7 +307,6 @@
   </section>
 
   <section class="section section--honey section--hex hive" id="hive" aria-labelledby="hive-title">
-    <svg class="floating-bee" style="top:12%;right:10%" aria-hidden="true"><use href="#i-bee"/></svg>
     <div class="container split split--reverse">
       <div class="hex-media" data-reveal="scale"><picture><source type="image/avif" srcset="assets/photos/honey-640.avif 640w, assets/photos/honey-1080.avif 1080w" sizes="(min-width: 900px) 520px, 92vw"><img src="assets/photos/honey-1080.webp" srcset="assets/photos/honey-640.webp 640w, assets/photos/honey-1080.webp 1080w" sizes="(min-width: 900px) 520px, 92vw" width="1080" height="1080" alt="Hens from the farm’s flock" loading="lazy" decoding="async"></picture></div>
       <div class="stack" style="--stack:1.5rem">
@@ -320,10 +329,22 @@
         </div>
         <p class="lead" data-reveal>Beyond lessons and camp, the farm hosts programs and events through the year. Ask us what's coming up next.</p>
       </div>
-      <ul class="features features--3" data-reveal>
-        <li><span class="card-icon"><svg aria-hidden="true"><use href="#i-award"/></svg></span><h3>Clinics</h3><p>Educational clinics with local and visiting equestrian professionals, including saddle fitting.</p></li>
-        <li><span class="card-icon"><svg aria-hidden="true"><use href="#i-sprout"/></svg></span><h3>Paint &amp; Ride</h3><p>One of our seasonal farm events. Ask us when the next one is on the calendar.</p></li>
-        <li><span class="card-icon"><svg aria-hidden="true"><use href="#i-heart"/></svg></span><h3>Equine-assisted coaching</h3><p>Consultations for equine-assisted therapy and coaching. Get in touch to learn more.</p></li>
+      <ul class="pcards">
+        <li class="pcard" data-reveal>
+          <div class="pcard-photo"><picture><source type="image/avif" srcset="assets/photos/about-clinics-640.avif 640w, assets/photos/about-clinics-1080.avif 1080w" sizes="(min-width: 760px) 31vw, 92vw"><img src="assets/photos/about-clinics-1080.webp" srcset="assets/photos/about-clinics-640.webp 640w, assets/photos/about-clinics-1080.webp 1080w" sizes="(min-width: 760px) 31vw, 92vw" width="1080" height="810" alt="A groundwork clinic with horses in the field" loading="lazy" decoding="async"></picture></div>
+          <h3>Clinics</h3>
+          <p>Educational clinics with local and visiting equestrian professionals, from groundwork and horsemanship to saddle fitting.</p>
+        </li>
+        <li class="pcard" data-reveal style="--delay:.08s">
+          <div class="pcard-photo"><picture><source type="image/avif" srcset="assets/photos/about-paint-480.avif 480w, assets/photos/about-paint-960.avif 960w" sizes="(min-width: 760px) 31vw, 92vw"><img src="assets/photos/about-paint-960.webp" srcset="assets/photos/about-paint-480.webp 480w, assets/photos/about-paint-960.webp 960w" sizes="(min-width: 760px) 31vw, 92vw" width="960" height="720" alt="Kids with a horse painted in rainbow colors at Paint &amp; Ride" loading="lazy" decoding="async"></picture></div>
+          <h3>Paint &amp; Ride</h3>
+          <p>A favorite with kids: an afternoon of painting and riding at the farm. Ask us when the next one is on the calendar.</p>
+        </li>
+        <li class="pcard" data-reveal style="--delay:.16s">
+          <div class="pcard-photo"><picture><source type="image/avif" srcset="assets/photos/about-coaching-640.avif 640w, assets/photos/about-coaching-1080.avif 1080w" sizes="(min-width: 760px) 31vw, 92vw"><img src="assets/photos/about-coaching-1080.webp" srcset="assets/photos/about-coaching-640.webp 640w, assets/photos/about-coaching-1080.webp 1080w" sizes="(min-width: 760px) 31vw, 92vw" width="1080" height="810" alt="A girl hugging her dark bay horse in the field" loading="lazy" decoding="async"></picture></div>
+          <h3>Equine-assisted coaching</h3>
+          <p>Consultations for equine-assisted therapy and coaching. Get in touch to learn more.</p>
+        </li>
       </ul>
     </div>
   </section>
@@ -344,7 +365,7 @@
     <div class="footer-grid">
       <div>
         <a class="brand" href="./">
-          <svg class="brand-mark" aria-hidden="true"><use href="#i-mark"/></svg>
+          <span class="brand-mark" aria-hidden="true"></span>
           <span class="brand-text"><span class="brand-name">Horse <em>&amp;</em> Hive</span><span class="brand-sub">Farm · Hydes, MD</span></span>
         </a>
         <p class="mt-2">Riding lessons, boarding, camp and a little honey, at the corner of Long Green Pike and Hydes Road.</p>

@@ -18,7 +18,6 @@
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="icon" href="assets/img/favicon-32.png" sizes="32x32" type="image/png">
   <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
   <link rel="manifest" href="site.webmanifest">
@@ -56,7 +55,6 @@
 
 <body>
 <svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
-  <symbol id="i-mark" viewBox="0 0 40 44"><path d="M20 1.8 37.6 11.9v20.2L20 42.2 2.4 32.1V11.9z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M13.2 13.5v8.3a6.8 6.8 0 0 0 13.6 0v-8.3" fill="none" stroke="currentColor" stroke-width="3.6"/><path d="M11.2 13.4h4.1M24.7 13.4h4.1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="20" cy="9.2" r="1.5" fill="currentColor"/></symbol>
   <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
   <symbol id="i-arrow-left" viewBox="0 0 24 24"><path d="M20 12H5M11 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
   <symbol id="i-arrow-up-right" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
@@ -85,7 +83,7 @@
 <header class="site-header">
   <div class="container header-inner">
     <a class="brand" href="./">
-      <svg class="brand-mark" aria-hidden="true"><use href="#i-mark"/></svg>
+      <span class="brand-mark" aria-hidden="true"></span>
       <span class="brand-text">
         <span class="brand-name">Horse <em>&amp;</em> Hive</span>
         <span class="brand-sub">Farm · Hydes, MD</span>
@@ -112,7 +110,7 @@
 <div class="mobile-menu" id="mobile-menu" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Menu">
   <div class="mobile-menu-top">
     <a class="brand" href="./">
-      <svg class="brand-mark" aria-hidden="true"><use href="#i-mark"/></svg>
+      <span class="brand-mark" aria-hidden="true"></span>
       <span class="brand-text"><span class="brand-name">Horse <em>&amp;</em> Hive</span><span class="brand-sub">Farm · Hydes, MD</span></span>
     </a>
     <button class="mobile-menu-close" type="button"><span class="visually-hidden">Close menu</span><svg aria-hidden="true"><use href="#i-close"/></svg></button>
@@ -239,20 +237,18 @@
           <p>Field and stall board with lighted arenas and caring hands.</p>
           <span class="card-foot">Boarding options <span class="card-go"><svg aria-hidden="true"><use href="#i-arrow-up-right"/></svg></span></span>
         </a>
-        <a class="card card--plain" href="lessons.html#companion" data-reveal style="--delay:.08s">
-          <span class="card-icon"><svg aria-hidden="true"><use href="#i-heart"/></svg></span>
-          <div>
-            <h3>Companion program</h3>
-            <p>Ground-only sessions on grooming, horse behavior and safe handling. No riding, no experience needed.</p>
-          </div>
-          <span class="card-foot">$45 per hour <span class="card-go"><svg aria-hidden="true"><use href="#i-arrow-up-right"/></svg></span></span>
+        <a class="card" href="lessons.html#companion" data-reveal style="--delay:.08s">
+          <div class="card-media"><picture><source type="image/avif" srcset="assets/photos/card-companion-400.avif 400w, assets/photos/card-companion-560.avif 560w" sizes="(min-width: 1100px) 32vw, (min-width: 720px) 50vw, 92vw"><img src="assets/photos/card-companion-560.webp" srcset="assets/photos/card-companion-400.webp 400w, assets/photos/card-companion-560.webp 560w" sizes="(min-width: 1100px) 32vw, (min-width: 720px) 50vw, 92vw" width="560" height="700" alt="Young riders grooming a grey horse together in the barn" loading="lazy" decoding="async"></picture></div>
+          <div class="card-top"><span class="card-num">05 · On the ground</span><span class="card-tag">$45 / hour</span></div>
+          <h3>Companion program</h3>
+          <p>Ground-only sessions on grooming, horse behavior and safe handling. No riding, no experience needed.</p>
+          <span class="card-foot">How it works <span class="card-go"><svg aria-hidden="true"><use href="#i-arrow-up-right"/></svg></span></span>
         </a>
-        <a class="card card--plain" href="contact.html?interest=clinics#enquire" data-reveal style="--delay:.16s">
-          <span class="card-icon"><svg aria-hidden="true"><use href="#i-award"/></svg></span>
-          <div>
-            <h3>Clinics &amp; events</h3>
-            <p>Educational clinics with local and visiting equestrian professionals, plus seasonal farm events.</p>
-          </div>
+        <a class="card" href="contact.html?interest=clinics#enquire" data-reveal style="--delay:.16s">
+          <div class="card-media"><picture><source type="image/avif" srcset="assets/photos/card-clinics-640.avif 640w, assets/photos/card-clinics-1080.avif 1080w" sizes="(min-width: 1100px) 32vw, (min-width: 720px) 50vw, 92vw"><img src="assets/photos/card-clinics-1080.webp" srcset="assets/photos/card-clinics-640.webp 640w, assets/photos/card-clinics-1080.webp 1080w" sizes="(min-width: 1100px) 32vw, (min-width: 720px) 50vw, 92vw" width="1080" height="1350" alt="A horsemanship clinic in the indoor arena" loading="lazy" decoding="async"></picture></div>
+          <div class="card-top"><span class="card-num">06 · Learn more</span><span class="card-tag">Visiting pros</span></div>
+          <h3>Clinics &amp; events</h3>
+          <p>Educational clinics with local and visiting equestrian professionals, plus seasonal farm events.</p>
           <span class="card-foot">Hear about the next one <span class="card-go"><svg aria-hidden="true"><use href="#i-arrow-up-right"/></svg></span></span>
         </a>
       </div>
@@ -409,8 +405,6 @@
 
   <!-- Hive -->
   <section class="section section--honey section--hex hive" aria-labelledby="hive-title">
-    <svg class="floating-bee" style="top:14%;left:8%" aria-hidden="true"><use href="#i-bee"/></svg>
-    <svg class="floating-bee" style="bottom:12%;right:12%;animation-delay:-4s;width:26px;height:26px" aria-hidden="true"><use href="#i-bee"/></svg>
     <div class="container split">
       <div class="hex-media" data-reveal="scale"><picture><source type="image/avif" srcset="assets/photos/honey-640.avif 640w, assets/photos/honey-1080.avif 1080w" sizes="(min-width: 900px) 520px, 92vw"><img src="assets/photos/honey-1080.webp" srcset="assets/photos/honey-640.webp 640w, assets/photos/honey-1080.webp 1080w" sizes="(min-width: 900px) 520px, 92vw" width="1080" height="1080" alt="Hens from the farm’s flock" loading="lazy" decoding="async"></picture></div>
       <div class="stack" style="--stack:1.5rem">
@@ -538,7 +532,7 @@
     <div class="footer-grid">
       <div>
         <a class="brand" href="./">
-          <svg class="brand-mark" aria-hidden="true"><use href="#i-mark"/></svg>
+          <span class="brand-mark" aria-hidden="true"></span>
           <span class="brand-text"><span class="brand-name">Horse <em>&amp;</em> Hive</span><span class="brand-sub">Farm · Hydes, MD</span></span>
         </a>
         <p class="mt-2">Riding lessons, boarding, camp and a little honey, at the corner of Long Green Pike and Hydes Road.</p>

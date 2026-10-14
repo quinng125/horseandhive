@@ -49,7 +49,7 @@ Horse & Hive Farm sits at 13220 Long Green Pike, Hydes, MD 21082, at the corner 
 | Consolidate thin pages | Twenty-plus WordPress pages became six focused pages with anchored sections |
 | Trust signals | 4.6★ / 53 reviews, real testimonials, CHA credentials, named horses and instructors |
 | Restrained motion | Staggered headline reveal, scroll reveals, gentle parallax and a slow marquee, all disabled for visitors who prefer reduced motion |
-| Speed & accessibility | No framework, self-hosted Latin-subset fonts, AVIF/WebP responsive images, minified assets; in local Lighthouse runs (simulated mobile), 90–91 performance and 100 accessibility, best practices and SEO |
+| Speed & accessibility | No framework, self-hosted Latin-subset fonts, AVIF/WebP responsive images, minified assets; in local Lighthouse runs (simulated mobile), 89–91 performance and 100 accessibility, best practices and SEO |
 | Local SEO | LocalBusiness structured data, descriptive titles and meta descriptions, a sitemap, social cards, and pages that answer local queries ("riding lessons Hydes MD") |
 
 ## 4. Photography direction

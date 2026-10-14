@@ -10,38 +10,6 @@
     ],
     "focus": "attention",
     "alt": "The view between a horse’s ears down the fenced lane at Horse & Hive Farm, with horses grazing on both sides",
-    "art": {
-      "mood": "golden",
-      "seed": 11,
-      "layers": 5,
-      "horizon": 0.5,
-      "depth": 0.42,
-      "trees": 7,
-      "fence": {
-        "from": 0,
-        "to": 0.62
-      },
-      "sun": {
-        "x": 0.72,
-        "y": 0.34,
-        "r": 0.07
-      },
-      "horses": [
-        {
-          "kind": "grazing",
-          "x": 0.62,
-          "size": 0.19,
-          "layer": 3
-        },
-        {
-          "kind": "standing",
-          "x": 0.78,
-          "size": 0.23,
-          "layer": 3,
-          "flip": true
-        }
-      ]
-    },
     "soften": 0.6
   },
   "story": {
@@ -57,23 +25,7 @@
       0.62,
       0.5
     ],
-    "alt": "The barn at Horse & Hive Farm at sunset",
-    "art": {
-      "mood": "dawn",
-      "seed": 3,
-      "layers": 4,
-      "horizon": 0.55,
-      "trees": 4,
-      "barn": {
-        "x": 0.5,
-        "size": 0.42
-      },
-      "sun": {
-        "x": 0.3,
-        "y": 0.3,
-        "r": 0.1
-      }
-    }
+    "alt": "The barn at Horse & Hive Farm at sunset"
   },
   "lessons": {
     "ratio": [
@@ -85,12 +37,7 @@
       1080
     ],
     "focus": "attention",
-    "alt": "A rider trotting a bay horse in the sand arena",
-    "art": {
-      "mood": "golden",
-      "seed": 5,
-      "scene": "arena"
-    }
+    "alt": "A rider trotting a bay horse in the sand arena"
   },
   "intro": {
     "ratio": [
@@ -102,27 +49,7 @@
       1080
     ],
     "focus": "attention",
-    "alt": "An instructor and a young rider sharing a high five after a lesson",
-    "art": {
-      "mood": "noon",
-      "seed": 21,
-      "layers": 4,
-      "horizon": 0.52,
-      "trees": 3,
-      "sun": {
-        "x": 0.25,
-        "y": 0.26,
-        "r": 0.1
-      },
-      "horses": [
-        {
-          "kind": "standing",
-          "x": 0.52,
-          "size": 0.38,
-          "layer": 3
-        }
-      ]
-    }
+    "alt": "An instructor and a young rider sharing a high five after a lesson"
   },
   "camp": {
     "ratio": [
@@ -134,38 +61,7 @@
       1080
     ],
     "focus": "attention",
-    "alt": "Two young riders in boots and helmets with a palomino pony",
-    "art": {
-      "mood": "noon",
-      "seed": 8,
-      "layers": 4,
-      "horizon": 0.5,
-      "trees": 5,
-      "fence": {
-        "from": 0,
-        "to": 1
-      },
-      "sun": {
-        "x": 0.75,
-        "y": 0.22,
-        "r": 0.11
-      },
-      "horses": [
-        {
-          "kind": "grazing",
-          "x": 0.35,
-          "size": 0.22,
-          "layer": 3
-        },
-        {
-          "kind": "standing",
-          "x": 0.72,
-          "size": 0.26,
-          "layer": 3,
-          "flip": true
-        }
-      ]
-    }
+    "alt": "Two young riders in boots and helmets with a palomino pony"
   },
   "boarding": {
     "ratio": [
@@ -180,31 +76,7 @@
       0.6,
       0.4
     ],
-    "alt": "Horses grazing in a pasture beside the barn",
-    "art": {
-      "mood": "dusk",
-      "seed": 14,
-      "layers": 4,
-      "horizon": 0.58,
-      "trees": 3,
-      "fence": {
-        "from": 0,
-        "to": 1
-      },
-      "sun": {
-        "x": 0.6,
-        "y": 0.5,
-        "r": 0.09
-      },
-      "horses": [
-        {
-          "kind": "grazing",
-          "x": 0.4,
-          "size": 0.2,
-          "layer": 3
-        }
-      ]
-    }
+    "alt": "Horses grazing in a pasture beside the barn"
   },
   "honey": {
     "ratio": [
@@ -216,11 +88,7 @@
       1080
     ],
     "focus": "attention",
-    "alt": "Hens from the farm’s flock",
-    "art": {
-      "scene": "honey",
-      "seed": 4
-    }
+    "alt": "Hens from the farm’s flock"
   },
   "facility-grass": {
     "ratio": [
@@ -232,23 +100,7 @@
       1080
     ],
     "focus": "attention",
-    "alt": "The grass arena with log jumps and the barns behind",
-    "art": {
-      "mood": "golden",
-      "seed": 31,
-      "layers": 3,
-      "horizon": 0.5,
-      "trees": 6,
-      "fence": {
-        "from": 0,
-        "to": 1
-      },
-      "sun": {
-        "x": 0.2,
-        "y": 0.3,
-        "r": 0.08
-      }
-    }
+    "alt": "The grass arena with log jumps and the barns behind"
   },
   "facility-stone": {
     "ratio": [
@@ -260,12 +112,7 @@
       1080
     ],
     "focus": "attention",
-    "alt": "The stone dust arena under the lights at dusk",
-    "art": {
-      "mood": "noon",
-      "seed": 32,
-      "scene": "arena"
-    }
+    "alt": "The stone dust arena under the lights at dusk"
   },
   "facility-indoor": {
     "ratio": [
@@ -277,12 +124,7 @@
       1080
     ],
     "focus": "attention",
-    "alt": "The small indoor arena",
-    "art": {
-      "mood": "golden",
-      "seed": 33,
-      "scene": "indoor"
-    }
+    "alt": "The small indoor arena"
   },
   "facility-dressage": {
     "ratio": [
@@ -294,27 +136,7 @@
       1080
     ],
     "focus": "attention",
-    "alt": "The dressage court with white rails",
-    "art": {
-      "mood": "dawn",
-      "seed": 34,
-      "layers": 4,
-      "horizon": 0.48,
-      "trees": 5,
-      "sun": {
-        "x": 0.78,
-        "y": 0.28,
-        "r": 0.08
-      },
-      "horses": [
-        {
-          "kind": "standing",
-          "x": 0.3,
-          "size": 0.24,
-          "layer": 3
-        }
-      ]
-    }
+    "alt": "The dressage court with white rails"
   },
   "facility-track": {
     "ratio": [
@@ -326,23 +148,7 @@
       1080
     ],
     "focus": "attention",
-    "alt": "The track around the fields",
-    "art": {
-      "mood": "dusk",
-      "seed": 35,
-      "layers": 5,
-      "horizon": 0.55,
-      "trees": 4,
-      "fence": {
-        "from": 0,
-        "to": 1
-      },
-      "sun": {
-        "x": 0.3,
-        "y": 0.48,
-        "r": 0.08
-      }
-    }
+    "alt": "The track around the fields"
   },
   "facility-pasture": {
     "ratio": [
@@ -354,31 +160,7 @@
       1080
     ],
     "focus": "attention",
-    "alt": "Horses grazing in a pasture with a run-in shed",
-    "art": {
-      "mood": "golden",
-      "seed": 36,
-      "layers": 4,
-      "horizon": 0.52,
-      "trees": 3,
-      "barn": {
-        "x": 0.7,
-        "size": 0.2
-      },
-      "sun": {
-        "x": 0.25,
-        "y": 0.3,
-        "r": 0.08
-      },
-      "horses": [
-        {
-          "kind": "grazing",
-          "x": 0.35,
-          "size": 0.2,
-          "layer": 3
-        }
-      ]
-    }
+    "alt": "Horses grazing in a pasture with a run-in shed"
   },
   "horse-archie": {
     "ratio": [
@@ -393,26 +175,7 @@
       0.5,
       0.3
     ],
-    "alt": "Archie, an off-the-track Thoroughbred lesson horse",
-    "art": {
-      "mood": "golden",
-      "seed": 41,
-      "layers": 3,
-      "horizon": 0.62,
-      "sun": {
-        "x": 0.3,
-        "y": 0.35,
-        "r": 0.11
-      },
-      "horses": [
-        {
-          "kind": "standing",
-          "x": 0.5,
-          "size": 0.42,
-          "layer": 2
-        }
-      ]
-    }
+    "alt": "Archie, an off-the-track Thoroughbred lesson horse"
   },
   "horse-cannoli": {
     "ratio": [
@@ -427,25 +190,6 @@
       0.5,
       0.3
     ],
-    "art": {
-      "mood": "golden",
-      "seed": 41,
-      "layers": 3,
-      "horizon": 0.62,
-      "sun": {
-        "x": 0.3,
-        "y": 0.35,
-        "r": 0.11
-      },
-      "horses": [
-        {
-          "kind": "standing",
-          "x": 0.5,
-          "size": 0.42,
-          "layer": 2
-        }
-      ]
-    },
     "alt": "Cannoli, a Haflinger with a flowing mane"
   },
   "horse-cloud": {
@@ -461,27 +205,7 @@
       0.5,
       0.3
     ],
-    "alt": "Cloud, a Paint lesson horse",
-    "art": {
-      "mood": "noon",
-      "seed": 42,
-      "layers": 3,
-      "horizon": 0.62,
-      "sun": {
-        "x": 0.72,
-        "y": 0.3,
-        "r": 0.11
-      },
-      "horses": [
-        {
-          "kind": "grazing",
-          "x": 0.5,
-          "size": 0.38,
-          "layer": 2,
-          "flip": true
-        }
-      ]
-    }
+    "alt": "Cloud, a Paint lesson horse"
   },
   "horse-dorito": {
     "ratio": [
@@ -496,27 +220,7 @@
       0.5,
       0.3
     ],
-    "alt": "Dorito, a Tennessee Walking Horse",
-    "art": {
-      "mood": "dusk",
-      "seed": 43,
-      "layers": 3,
-      "horizon": 0.62,
-      "sun": {
-        "x": 0.7,
-        "y": 0.5,
-        "r": 0.1
-      },
-      "horses": [
-        {
-          "kind": "standing",
-          "x": 0.5,
-          "size": 0.42,
-          "layer": 2,
-          "flip": true
-        }
-      ]
-    }
+    "alt": "Dorito, a Tennessee Walking Horse"
   },
   "horse-mater": {
     "ratio": [
@@ -531,25 +235,6 @@
       0.5,
       0.3
     ],
-    "art": {
-      "mood": "golden",
-      "seed": 41,
-      "layers": 3,
-      "horizon": 0.62,
-      "sun": {
-        "x": 0.3,
-        "y": 0.35,
-        "r": 0.11
-      },
-      "horses": [
-        {
-          "kind": "standing",
-          "x": 0.5,
-          "size": 0.42,
-          "layer": 2
-        }
-      ]
-    },
     "alt": "Mater, an off-the-track Thoroughbred"
   },
   "horse-mani": {
@@ -565,25 +250,6 @@
       0.5,
       0.3
     ],
-    "art": {
-      "mood": "golden",
-      "seed": 41,
-      "layers": 3,
-      "horizon": 0.62,
-      "sun": {
-        "x": 0.3,
-        "y": 0.35,
-        "r": 0.11
-      },
-      "horses": [
-        {
-          "kind": "standing",
-          "x": 0.5,
-          "size": 0.42,
-          "layer": 2
-        }
-      ]
-    },
     "alt": "Manicotti (Mani), a Quarter Horse"
   },
   "horse-meatball": {
@@ -599,25 +265,6 @@
       0.5,
       0.3
     ],
-    "art": {
-      "mood": "golden",
-      "seed": 41,
-      "layers": 3,
-      "horizon": 0.62,
-      "sun": {
-        "x": 0.3,
-        "y": 0.35,
-        "r": 0.11
-      },
-      "horses": [
-        {
-          "kind": "standing",
-          "x": 0.5,
-          "size": 0.42,
-          "layer": 2
-        }
-      ]
-    },
     "alt": "Meatball, an Arab cross"
   },
   "horse-mocha": {
@@ -633,25 +280,6 @@
       0.5,
       0.3
     ],
-    "art": {
-      "mood": "golden",
-      "seed": 41,
-      "layers": 3,
-      "horizon": 0.62,
-      "sun": {
-        "x": 0.3,
-        "y": 0.35,
-        "r": 0.11
-      },
-      "horses": [
-        {
-          "kind": "standing",
-          "x": 0.5,
-          "size": 0.42,
-          "layer": 2
-        }
-      ]
-    },
     "alt": "Mocha, a Draft cross"
   },
   "horse-peaches": {
@@ -667,25 +295,6 @@
       0.5,
       0.3
     ],
-    "art": {
-      "mood": "golden",
-      "seed": 41,
-      "layers": 3,
-      "horizon": 0.62,
-      "sun": {
-        "x": 0.3,
-        "y": 0.35,
-        "r": 0.11
-      },
-      "horses": [
-        {
-          "kind": "standing",
-          "x": 0.5,
-          "size": 0.42,
-          "layer": 2
-        }
-      ]
-    },
     "alt": "Peaches, a Haflinger lesson pony"
   },
   "horse-sprite": {
@@ -701,25 +310,6 @@
       0.5,
       0.3
     ],
-    "art": {
-      "mood": "golden",
-      "seed": 41,
-      "layers": 3,
-      "horizon": 0.62,
-      "sun": {
-        "x": 0.3,
-        "y": 0.35,
-        "r": 0.11
-      },
-      "horses": [
-        {
-          "kind": "standing",
-          "x": 0.5,
-          "size": 0.42,
-          "layer": 2
-        }
-      ]
-    },
     "alt": "Sprite, a Pony of the Americas"
   },
   "horse-sundae": {
@@ -732,25 +322,6 @@
       800
     ],
     "focus": "attention",
-    "art": {
-      "mood": "golden",
-      "seed": 41,
-      "layers": 3,
-      "horizon": 0.62,
-      "sun": {
-        "x": 0.3,
-        "y": 0.35,
-        "r": 0.11
-      },
-      "horses": [
-        {
-          "kind": "standing",
-          "x": 0.5,
-          "size": 0.42,
-          "layer": 2
-        }
-      ]
-    },
     "alt": "Sundae, an Arab cross and the herd’s senior member"
   },
   "horse-tatertot": {
@@ -766,26 +337,7 @@
       0.5,
       0.3
     ],
-    "alt": "Tater Tot, a Haflinger lesson pony",
-    "art": {
-      "mood": "dawn",
-      "seed": 44,
-      "layers": 3,
-      "horizon": 0.64,
-      "sun": {
-        "x": 0.28,
-        "y": 0.32,
-        "r": 0.11
-      },
-      "horses": [
-        {
-          "kind": "grazing",
-          "x": 0.5,
-          "size": 0.34,
-          "layer": 2
-        }
-      ]
-    }
+    "alt": "Tater Tot, a Haflinger lesson pony"
   },
   "team-lina": {
     "ratio": [
@@ -797,18 +349,7 @@
       720
     ],
     "focus": "attention",
-    "alt": "Lina riding a bay horse in the arena",
-    "art": {
-      "mood": "dawn",
-      "seed": 52,
-      "layers": 3,
-      "horizon": 0.6,
-      "sun": {
-        "x": 0.5,
-        "y": 0.42,
-        "r": 0.14
-      }
-    }
+    "alt": "Lina riding a bay horse in the arena"
   },
   "team-merideth": {
     "ratio": [
@@ -820,18 +361,7 @@
       720
     ],
     "focus": "attention",
-    "alt": "Merideth jumping a cross-country fence",
-    "art": {
-      "mood": "noon",
-      "seed": 53,
-      "layers": 3,
-      "horizon": 0.6,
-      "sun": {
-        "x": 0.5,
-        "y": 0.42,
-        "r": 0.14
-      }
-    }
+    "alt": "Merideth jumping a cross-country fence"
   },
   "team-victoria": {
     "ratio": [
@@ -843,18 +373,7 @@
       720
     ],
     "focus": "attention",
-    "alt": "Victoria jumping a show-jumping fence",
-    "art": {
-      "mood": "dusk",
-      "seed": 54,
-      "layers": 3,
-      "horizon": 0.6,
-      "sun": {
-        "x": 0.5,
-        "y": 0.5,
-        "r": 0.14
-      }
-    }
+    "alt": "Victoria jumping a show-jumping fence"
   },
   "banner": {
     "ratio": [
@@ -867,38 +386,6 @@
     ],
     "focus": "attention",
     "alt": "Riders on horseback in the arena at sunset",
-    "art": {
-      "mood": "golden",
-      "seed": 61,
-      "layers": 5,
-      "horizon": 0.52,
-      "depth": 0.4,
-      "trees": 8,
-      "fence": {
-        "from": 0.3,
-        "to": 1
-      },
-      "sun": {
-        "x": 0.28,
-        "y": 0.5,
-        "r": 0.09
-      },
-      "horses": [
-        {
-          "kind": "standing",
-          "x": 0.6,
-          "size": 0.24,
-          "layer": 3,
-          "flip": true
-        },
-        {
-          "kind": "grazing",
-          "x": 0.72,
-          "size": 0.2,
-          "layer": 3
-        }
-      ]
-    },
     "soften": 0.6
   },
   "page-lessons": {
@@ -913,11 +400,6 @@
     ],
     "focus": "attention",
     "alt": "A young rider in a lesson with her instructor",
-    "art": {
-      "mood": "golden",
-      "seed": 71,
-      "scene": "arena"
-    },
     "soften": 0.6
   },
   "page-boarding": {
@@ -932,42 +414,6 @@
     ],
     "focus": "attention",
     "alt": "Two horses grazing by the barn",
-    "art": {
-      "mood": "dawn",
-      "seed": 72,
-      "layers": 5,
-      "horizon": 0.5,
-      "depth": 0.4,
-      "trees": 6,
-      "barn": {
-        "x": 0.24,
-        "size": 0.12
-      },
-      "fence": {
-        "from": 0.35,
-        "to": 1
-      },
-      "sun": {
-        "x": 0.75,
-        "y": 0.3,
-        "r": 0.07
-      },
-      "horses": [
-        {
-          "kind": "grazing",
-          "x": 0.6,
-          "size": 0.18,
-          "layer": 3
-        },
-        {
-          "kind": "grazing",
-          "x": 0.74,
-          "size": 0.17,
-          "layer": 3,
-          "flip": true
-        }
-      ]
-    },
     "soften": 0.6
   },
   "page-camp": {
@@ -982,38 +428,6 @@
     ],
     "focus": "attention",
     "alt": "Campers and instructors with their horses in the arena",
-    "art": {
-      "mood": "noon",
-      "seed": 73,
-      "layers": 5,
-      "horizon": 0.5,
-      "depth": 0.4,
-      "trees": 8,
-      "fence": {
-        "from": 0,
-        "to": 0.5
-      },
-      "sun": {
-        "x": 0.8,
-        "y": 0.22,
-        "r": 0.08
-      },
-      "horses": [
-        {
-          "kind": "standing",
-          "x": 0.55,
-          "size": 0.22,
-          "layer": 3
-        },
-        {
-          "kind": "standing",
-          "x": 0.68,
-          "size": 0.2,
-          "layer": 3,
-          "flip": true
-        }
-      ]
-    },
     "soften": 0.6
   },
   "page-about": {
@@ -1028,31 +442,6 @@
     ],
     "focus": "attention",
     "alt": "Two horses resting in the field",
-    "art": {
-      "mood": "golden",
-      "seed": 74,
-      "layers": 5,
-      "horizon": 0.5,
-      "depth": 0.4,
-      "trees": 6,
-      "barn": {
-        "x": 0.66,
-        "size": 0.16
-      },
-      "sun": {
-        "x": 0.3,
-        "y": 0.3,
-        "r": 0.07
-      },
-      "horses": [
-        {
-          "kind": "grazing",
-          "x": 0.3,
-          "size": 0.16,
-          "layer": 3
-        }
-      ]
-    },
     "soften": 0.6
   },
   "page-contact": {
@@ -1067,27 +456,312 @@
     ],
     "focus": "attention",
     "alt": "The fenced lane leading to the barns at Horse & Hive Farm",
-    "art": {
-      "mood": "dusk",
-      "seed": 75,
-      "layers": 5,
-      "horizon": 0.52,
-      "depth": 0.4,
-      "trees": 7,
-      "barn": {
-        "x": 0.45,
-        "size": 0.14
-      },
-      "fence": {
-        "from": 0,
-        "to": 1
-      },
-      "sun": {
-        "x": 0.7,
-        "y": 0.48,
-        "r": 0.07
-      }
-    },
     "soften": 0.6
+  },
+  "card-companion": {
+    "ratio": [
+      4,
+      5
+    ],
+    "widths": [
+      400,
+      560
+    ],
+    "focus": [
+      0.45,
+      0.5
+    ],
+    "alt": "Young riders grooming a grey horse together in the barn"
+  },
+  "card-clinics": {
+    "ratio": [
+      4,
+      5
+    ],
+    "widths": [
+      640,
+      1080
+    ],
+    "focus": [
+      0.5,
+      0.5
+    ],
+    "alt": "A horsemanship clinic in the indoor arena"
+  },
+  "lessons-companion": {
+    "ratio": [
+      4,
+      5
+    ],
+    "widths": [
+      400,
+      570
+    ],
+    "focus": [
+      0.5,
+      0.5
+    ],
+    "alt": "Kids in helmets brushing a lesson horse"
+  },
+  "lessons-wear": {
+    "ratio": [
+      4,
+      5
+    ],
+    "widths": [
+      640,
+      860
+    ],
+    "focus": [
+      0.42,
+      0.5
+    ],
+    "alt": "A young rider in her helmet and boots hugging her grey pony"
+  },
+  "lessons-clinic": {
+    "ratio": [
+      4,
+      3
+    ],
+    "widths": [
+      640,
+      1080
+    ],
+    "focus": [
+      0.5,
+      0.55
+    ],
+    "alt": "Riders and their horses at a clinic in the field"
+  },
+  "value-horses": {
+    "ratio": [
+      4,
+      3
+    ],
+    "widths": [
+      640,
+      1080
+    ],
+    "focus": [
+      0.5,
+      0.35
+    ],
+    "alt": "Cheek to cheek with a palomino in the barn"
+  },
+  "value-safety": {
+    "ratio": [
+      4,
+      3
+    ],
+    "widths": [
+      480,
+      800
+    ],
+    "focus": [
+      0.5,
+      0.4
+    ],
+    "alt": "A young rider in a pink helmet on a Haflinger"
+  },
+  "value-belong": {
+    "ratio": [
+      4,
+      3
+    ],
+    "widths": [
+      640,
+      1080
+    ],
+    "focus": [
+      0.5,
+      0.5
+    ],
+    "alt": "Summer campers gathered together on the farm"
+  },
+  "about-clinics": {
+    "ratio": [
+      4,
+      3
+    ],
+    "widths": [
+      640,
+      1080
+    ],
+    "focus": [
+      0.5,
+      0.55
+    ],
+    "alt": "A groundwork clinic with horses in the field"
+  },
+  "about-paint": {
+    "ratio": [
+      4,
+      3
+    ],
+    "widths": [
+      480,
+      960
+    ],
+    "focus": [
+      0.5,
+      0.5
+    ],
+    "alt": "Kids with a horse painted in rainbow colors at Paint & Ride"
+  },
+  "about-coaching": {
+    "ratio": [
+      4,
+      3
+    ],
+    "widths": [
+      640,
+      1080
+    ],
+    "focus": [
+      0.5,
+      0.5
+    ],
+    "alt": "A girl hugging her dark bay horse in the field"
+  },
+  "boarding-tack": {
+    "ratio": [
+      4,
+      3
+    ],
+    "widths": [
+      640,
+      1080
+    ],
+    "focus": [
+      0.5,
+      0.5
+    ],
+    "alt": "The barn aisle with tack trunks and stalls"
+  },
+  "boarding-trainer": {
+    "ratio": [
+      4,
+      3
+    ],
+    "widths": [
+      640,
+      1080
+    ],
+    "focus": [
+      0.5,
+      0.5
+    ],
+    "alt": "A trainer working a horse in the indoor arena"
+  },
+  "contact-sign": {
+    "ratio": [
+      4,
+      3
+    ],
+    "widths": [
+      480,
+      880
+    ],
+    "focus": [
+      0.62,
+      0.62
+    ],
+    "alt": "The Horse & Hive Farm sign at 13220 Long Green Pike"
+  },
+  "camp-1": {
+    "ratio": [
+      2,
+      1
+    ],
+    "widths": [
+      600,
+      810
+    ],
+    "focus": "attention",
+    "alt": "Campers riding and leading ponies across the field"
+  },
+  "camp-2": {
+    "ratio": [
+      1,
+      1
+    ],
+    "widths": [
+      400,
+      590
+    ],
+    "focus": "attention",
+    "alt": "A camper riding a Haflinger along the fence"
+  },
+  "camp-3": {
+    "ratio": [
+      1,
+      1
+    ],
+    "widths": [
+      400,
+      620
+    ],
+    "focus": "attention",
+    "alt": "A camper saying hello to a horse in its stall"
+  },
+  "camp-4": {
+    "ratio": [
+      1,
+      1
+    ],
+    "widths": [
+      400,
+      620
+    ],
+    "focus": "attention",
+    "alt": "Two campers smiling on the farm"
+  },
+  "camp-5": {
+    "ratio": [
+      1,
+      1
+    ],
+    "widths": [
+      400,
+      620
+    ],
+    "focus": "attention",
+    "alt": "A camper riding a palomino over a ground pole"
+  },
+  "camp-6": {
+    "ratio": [
+      1,
+      1
+    ],
+    "widths": [
+      400,
+      620
+    ],
+    "focus": "attention",
+    "alt": "Campers cooling off on the water slide"
+  },
+  "camp-7": {
+    "ratio": [
+      1,
+      1
+    ],
+    "widths": [
+      400,
+      620
+    ],
+    "focus": "attention",
+    "alt": "A camper leading a chestnut horse over a log"
+  },
+  "camp-8": {
+    "ratio": [
+      1,
+      1
+    ],
+    "widths": [
+      400,
+      620
+    ],
+    "focus": "attention",
+    "alt": "Campers at the fence with two horses in fly masks"
   }
 }

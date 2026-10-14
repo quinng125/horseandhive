@@ -40,10 +40,22 @@ nav: about
         <p class="eyebrow" data-reveal>What we believe</p>
         <h2 class="h1" id="values-title" data-reveal>Three things <em>we never compromise on.</em></h2>
       </div>
-      <ul class="features features--3" data-reveal>
-        <li><span class="card-icon"><svg aria-hidden="true"><use href="#i-heart"/></svg></span><h3>Horses come first</h3><p>Individual diet, health and training programs for every horse, and at least one rest day a week. Happy horses teach better.</p></li>
-        <li><span class="card-icon"><svg aria-hidden="true"><use href="#i-shield"/></svg></span><h3>Safety, always</h3><p>Approved helmets on every ride, proper footwear, a private first lesson to review farm rules, and trained, certified instructors.</p></li>
-        <li><span class="card-icon"><svg aria-hidden="true"><use href="#i-users"/></svg></span><h3>Every rider belongs</h3><p>From five-year-olds to adults, and from shy first-timers to riders who want to compete: there's a place for you here.</p></li>
+      <ul class="pcards">
+        <li class="pcard" data-reveal>
+          <div class="pcard-photo">{{pic value-horses sizes="(min-width: 760px) 31vw, 92vw"}}</div>
+          <h3>Horses come first</h3>
+          <p>Individual diet, health and training programs for every horse, and at least one rest day a week. Happy horses teach better.</p>
+        </li>
+        <li class="pcard" data-reveal style="--delay:.08s">
+          <div class="pcard-photo">{{pic value-safety sizes="(min-width: 760px) 31vw, 92vw"}}</div>
+          <h3>Safety, always</h3>
+          <p>Approved helmets on every ride, proper footwear, a private first lesson to review farm rules, and trained, certified instructors.</p>
+        </li>
+        <li class="pcard" data-reveal style="--delay:.16s">
+          <div class="pcard-photo">{{pic value-belong sizes="(min-width: 760px) 31vw, 92vw"}}</div>
+          <h3>Every rider belongs</h3>
+          <p>From five-year-olds to adults, and from shy first-timers to riders who want to compete: there's a place for you here.</p>
+        </li>
       </ul>
     </div>
   </section>
@@ -96,7 +108,6 @@ nav: about
   </section>
 
   <section class="section section--honey section--hex hive" id="hive" aria-labelledby="hive-title">
-    <svg class="floating-bee" style="top:12%;right:10%" aria-hidden="true"><use href="#i-bee"/></svg>
     <div class="container split split--reverse">
       <div class="hex-media" data-reveal="scale">{{pic honey sizes="(min-width: 900px) 520px, 92vw"}}</div>
       <div class="stack" style="--stack:1.5rem">
@@ -119,10 +130,22 @@ nav: about
         </div>
         <p class="lead" data-reveal>Beyond lessons and camp, the farm hosts programs and events through the year. Ask us what's coming up next.</p>
       </div>
-      <ul class="features features--3" data-reveal>
-        <li><span class="card-icon"><svg aria-hidden="true"><use href="#i-award"/></svg></span><h3>Clinics</h3><p>Educational clinics with local and visiting equestrian professionals, including saddle fitting.</p></li>
-        <li><span class="card-icon"><svg aria-hidden="true"><use href="#i-sprout"/></svg></span><h3>Paint &amp; Ride</h3><p>One of our seasonal farm events. Ask us when the next one is on the calendar.</p></li>
-        <li><span class="card-icon"><svg aria-hidden="true"><use href="#i-heart"/></svg></span><h3>Equine-assisted coaching</h3><p>Consultations for equine-assisted therapy and coaching. Get in touch to learn more.</p></li>
+      <ul class="pcards">
+        <li class="pcard" data-reveal>
+          <div class="pcard-photo">{{pic about-clinics sizes="(min-width: 760px) 31vw, 92vw"}}</div>
+          <h3>Clinics</h3>
+          <p>Educational clinics with local and visiting equestrian professionals, from groundwork and horsemanship to saddle fitting.</p>
+        </li>
+        <li class="pcard" data-reveal style="--delay:.08s">
+          <div class="pcard-photo">{{pic about-paint sizes="(min-width: 760px) 31vw, 92vw"}}</div>
+          <h3>Paint &amp; Ride</h3>
+          <p>A favorite with kids: an afternoon of painting and riding at the farm. Ask us when the next one is on the calendar.</p>
+        </li>
+        <li class="pcard" data-reveal style="--delay:.16s">
+          <div class="pcard-photo">{{pic about-coaching sizes="(min-width: 760px) 31vw, 92vw"}}</div>
+          <h3>Equine-assisted coaching</h3>
+          <p>Consultations for equine-assisted therapy and coaching. Get in touch to learn more.</p>
+        </li>
       </ul>
     </div>
   </section>
