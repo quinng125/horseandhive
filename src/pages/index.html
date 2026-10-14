@@ -25,7 +25,7 @@ nav: home
           </div>
           <ul class="hero-facts fade-up" style="--d:.65s">
             <li><svg aria-hidden="true"><use href="#i-star"/></svg>4.6 from 53 reviews</li>
-            <li><svg aria-hidden="true"><use href="#i-award"/></svg>CHA-certified instructors</li>
+            <li><svg aria-hidden="true"><use href="#i-award"/></svg>Trained &amp; certified instructors</li>
             <li><svg aria-hidden="true"><use href="#i-users"/></svg>Ages 5 &amp; up</li>
           </ul>
         </div>
@@ -59,7 +59,7 @@ nav: home
           <p>Our lesson horses each have their own diet, health and training plan, and every one of them gets at least one rest day a week. Happy horses make confident riders.</p>
         </div>
         <ul class="stats" data-reveal>
-          <li><strong><span data-count="11">11</span></strong><span>Lesson horses &amp; ponies</span></li>
+          <li><strong><span data-count="12">12</span></strong><span>Lesson horses &amp; ponies</span></li>
           <li><strong><span data-count="6">6</span></strong><span>Days a week of lessons</span></li>
           <li><strong><span data-count="5">5</span><sup>+</sup></strong><span>Ages we teach, through adult</span></li>
           <li><strong><span data-count="6">6</span></strong><span>Arenas, courts, track &amp; trails</span></li>
@@ -77,7 +77,7 @@ nav: home
           <p class="eyebrow" data-reveal>Ways to ride</p>
           <h2 class="h1" id="programs-title" data-reveal>Something for every rider, <em>and every horse lover.</em></h2>
         </div>
-        <p class="lead" data-reveal>Whether you've never touched a horse or you're bringing your own, there's a place for you here: beginner to advanced, English or Western, on the ground or in the saddle.</p>
+        <p class="lead" data-reveal>Whether you've never touched a horse or you're bringing your own, there's a place for you here: beginner to advanced, on the ground or in the saddle.</p>
       </div>
 
       <div class="bento">
@@ -89,14 +89,14 @@ nav: home
           <span class="card-foot">Explore lessons <span class="card-go"><svg aria-hidden="true"><use href="#i-arrow-up-right"/></svg></span></span>
         </a>
         <a class="card" href="lessons.html#intro" data-reveal style="--delay:.08s">
-          <div class="card-media">{{pic intro sizes="(min-width: 1100px) 40vw, (min-width: 720px) 50vw, 92vw"}}</div>
+          <div class="card-media">{{pic intro sizes="(min-width: 1100px) 40vw, (min-width: 720px) 50vw, 92vw" pos="50% 22%"}}</div>
           <div class="card-top"><span class="card-num">02 · First time</span><span class="card-tag">New riders start here</span></div>
           <h3>Introduction to Horses</h3>
           <p>A gentle first meeting for the horse-curious, shy kids included.</p>
           <span class="card-foot">How it works <span class="card-go"><svg aria-hidden="true"><use href="#i-arrow-up-right"/></svg></span></span>
         </a>
         <a class="card" href="camp.html" data-reveal style="--delay:.16s">
-          <div class="card-media">{{pic camp sizes="(min-width: 1100px) 40vw, (min-width: 720px) 50vw, 92vw"}}</div>
+          <div class="card-media">{{pic camp sizes="(min-width: 1100px) 40vw, (min-width: 720px) 50vw, 92vw" pos="50% 35%"}}</div>
           <div class="card-top"><span class="card-num">03 · Summer</span><span class="card-tag">2027 interest list</span></div>
           <h3>Summer camp</h3>
           <p>Week-long, full-day and half-day camp for ages 6+. No experience needed.</p>
@@ -196,36 +196,11 @@ nav: home
       </div>
     </div>
     <ul class="rail" data-rail-track>
-      <li class="horse-card" data-reveal>
-        <div class="arch">{{pic horse-archie sizes="(min-width: 640px) 340px, 78vw"}}</div>
-        <div class="horse-meta"><h3>Archie</h3><span class="age">Age 8</span></div>
-        <p class="breed">Thoroughbred</p>
-        <p>A retired racehorse turned all-star teacher. Archie carries beginner through advanced riders and helps students learn ground work.</p>
-      </li>
-      <li class="horse-card" data-reveal style="--delay:.08s">
-        <div class="arch">{{pic horse-cloud sizes="(min-width: 640px) 340px, 78vw"}}</div>
-        <div class="horse-meta"><h3>Cloud</h3><span class="age">Age 20</span></div>
-        <p class="breed">Paint</p>
-        <p>Our reliable lesson veteran, who also loves to jump and play pony games.</p>
-      </li>
-      <li class="horse-card" data-reveal style="--delay:.16s">
-        <div class="arch">{{pic horse-dorito sizes="(min-width: 640px) 340px, 78vw"}}</div>
-        <div class="horse-meta"><h3>Dorito</h3><span class="age">Age 19</span></div>
-        <p class="breed">Tennessee Walking Horse</p>
-        <p>Smooth as they come. Dorito is how our students learn gaited riding.</p>
-      </li>
-      <li class="horse-card" data-reveal style="--delay:.24s">
-        <div class="arch">{{pic horse-tatertot sizes="(min-width: 640px) 340px, 78vw"}}</div>
-        <div class="horse-meta"><h3>Tater Tot</h3><span class="age">Age 21</span></div>
-        <p class="breed">Haflinger</p>
-        <p>Missing an eye and an ear, and still one of our strongest lesson ponies. Proof that heart is what counts.</p>
-      </li>
-      <li class="herd-more" data-reveal style="--delay:.32s">
-        <p class="eyebrow">And the rest of the herd</p>
-        <ul>
-          <li>Cannoli</li><li>Mani</li><li>Mater</li><li>Mocha</li><li>Peaches</li><li>Sundae</li>
-        </ul>
-        <a class="link-arrow" href="about.html#herd">Meet them all <svg class="arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+{{> herd}}
+      <li class="herd-more" data-reveal>
+        <p class="eyebrow">Twelve teachers, one herd</p>
+        <p class="statement" style="font-size:var(--step-2)">Each one has its own diet, health and training plan, and at least one rest day a week.</p>
+        <a class="link-arrow" href="about.html#herd">Meet the whole herd <svg class="arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
       </li>
     </ul>
   </section>
@@ -238,7 +213,7 @@ nav: home
       <div class="hex-media" data-reveal="scale">{{pic honey sizes="(min-width: 900px) 520px, 92vw"}}</div>
       <div class="stack" style="--stack:1.5rem">
         <p class="eyebrow" data-reveal>The hive in Horse &amp; Hive</p>
-        <h2 class="h1" id="hive-title" data-reveal>Honey from our own bees. <em>Eggs from our own hens.</em></h2>
+        <h2 class="h1" id="hive-title" data-reveal>Eggs from our own hens. <em>Honey from our own bees.</em></h2>
         <p class="lead" data-reveal>Our bees are part of how we got our name. When the season is right, we harvest fresh honey right here on the farm, and our chickens keep us in eggs.</p>
         <ul class="hive-list" data-reveal>
           <li>Raw honey, harvested on site from our own hives</li>

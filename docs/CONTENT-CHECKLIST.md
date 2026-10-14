@@ -18,19 +18,23 @@ Everything on the new site was taken from the current horseandhive.com, its PDFs
 ## People
 
 - [ ] Owners: **Amber and Ryan Frost** (from the 2022 farm rules). *Our Farm.*
-- [ ] Instructors and bios: **Ellie** (CHA Level 2, here since 2017), **Lina**, **Merideth**, **Victoria**, **April** (farm manager & trainer), **Jim McDonald** (clinician). Is anyone missing or no longer teaching? *Our Farm.*
-- [ ] Kaitlyn is named in a testimonial. Should she be on the team? *Home.*
+- [ ] Instructors: **Lina**, **Merideth** and **Victoria**, with bios condensed from the current About page. Is anyone missing? *Our Farm.*
+- [ ] Testimonials mention Jim, April, Ellie and Kaitlyn, who aren't on the current team page. Keep those quotes? *Home.*
 
 ## Horses
 
-- [ ] Ages shown: Archie 8, Cloud 20, Dorito 19, Tater Tot 21. These came from the current site and may be a year or more old. *Home, Our Farm.*
-- [ ] The rest of the herd: Cannoli, Mani (Manicotti), Mater, Mocha, Peaches, Sundae. The site says 11 lesson horses but only 10 are named, so who's the eleventh? *Home, Our Farm.*
+- [ ] All 12 lesson horses come from the current Meet the Horses page, with its photos and descriptions: Archie, Cannoli, Cloud, Dorito, Mater, Mani, Meatball, Mocha, Peaches, Sprite, Sundae and Tater Tot. Ages are as listed there, so check they're current. *Home, Our Farm.*
+
+## Photos
+
+- [ ] All photos come from the current site's media library. Swap in anything newer or better, especially a beehive or honey photo for the hive section (it currently shows the hens) and a higher-resolution hero.
 
 ## Claims & reviews
 
 - [ ] "4.6 from 53 reviews" (from the homepage widget; the reviews page lists different numbers). Update to the current Google rating. *Home.*
 - [ ] Testimonials are quoted from the current reviews page, with light typo fixes ("Hourse" → "Horse"). *Home, Lessons.*
-- [ ] "CHA-certified instructors." Confirm the wording. *Home.*
+- [ ] "Trained & certified instructors" matches the current About page wording. *Home, Lessons.*
+- [ ] Lessons run Monday and Wednesday through Sunday (from the current Lessons page). *Lessons.*
 - [ ] "Six places to ride" counts the grass arena, stone dust arena, small indoor, dressage court/trail obstacles, track and pastures. *Home.*
 
 ## Programs to confirm or describe
@@ -43,10 +47,6 @@ Everything on the new site was taken from the current horseandhive.com, its PDFs
 
 ## Links & accounts
 
-- [ ] Instagram or other social accounts to add (only Facebook is linked now).
+- [ ] Facebook and Instagram (@horseandhive) are linked. Any others?
 - [ ] Should a Google Business Profile review link be added for "Leave us a review"?
 - [ ] The contact form sends to **hhfarm2012@gmail.com**. Is that still the right inbox?
-
-## Photos
-
-- [ ] Send originals for each slot listed in the README (at least the `hero`, the four program photos and the four featured horses), then run `npm run photos`.

@@ -10,7 +10,7 @@ It's a fast, static site (plain HTML, CSS and a little JavaScript) with no frame
 - **Built to convert.** Every page leads to one clear next step, "Book your first lesson". There's a sticky call/book bar on phones, a three-step "first ride" path, visible pricing, and an enquiry form that pre-selects the right topic from whichever button was clicked.
 - **Pages:** Home, Lessons, Boarding, Camp, Our Farm (story, team, herd, honey), Visit & Contact, a 404, and an owner-only **Photo Lab**.
 - **Photo upgrade pipeline.** Drop in phone photos and every image gets the same professional treatment: smart-cropped to the layout, auto-levelled, warmly color-graded, sharpened, stripped of GPS metadata, and exported as AVIF and WebP in several sizes.
-- **Quality:** in local Lighthouse runs (simulated mobile, gzip enabled), it scores 94–95 for performance and 100 for accessibility, best practices and SEO. It has local-business structured data, social share cards, a sitemap, reduced-motion support, full keyboard navigation and self-hosted fonts.
+- **Quality:** in local Lighthouse runs (simulated mobile, gzip enabled), it scores 90–91 for performance and 100 for accessibility, best practices and SEO. It has local-business structured data, social share cards, a sitemap, reduced-motion support, full keyboard navigation and self-hosted fonts.
 
 ## Quick start
 
@@ -23,32 +23,39 @@ npm run check        # checks links, anchors, assets and alt text
 
 The built `*.html` files in the repository root are the live site. Edit pages in `src/`, not the root files.
 
-## Adding the farm's photos
+## Photos
 
-Every image on the site is a numbered "slot" (see `photos/slots.json`). Until a real photo is added, each slot shows a matching illustration so the site never looks unfinished.
+Every image on the site is a "slot" defined in `photos/slots.json`. The farm's own photos, taken from the media library of the previous horseandhive.com, live in `photos/original/<slot>.jpg`. Each one is run through the photo pipeline, which:
 
-1. Save a photo as `photos/original/<slot>.jpg`, for example `photos/original/hero.jpg`.
-2. Run `npm run photos` (or `npm run photos -- hero` for just one).
-3. Run `npm run build`, then open `/photo-lab.html` to drag a before/after slider over every upgraded photo.
+- crops it to the layout's shape, around the subject or around a focus point set in `slots.json`
+- auto-levels it and applies a film-style grade: gentle contrast, calmer phone-camera greens, warm highlights and soft matte blacks
+- sharpens it at each output size (or softens it slightly, for full-width photos behind text) and adds a subtle vignette
+- strips metadata and exports AVIF and WebP in several sizes
 
-| Slot | Shape | Where it appears | Best subject |
+To replace or add a photo:
+
+1. Save it as `photos/original/<slot>.jpg`, for example `photos/original/hero.jpg`.
+2. If the crop misses the subject, set `"focus": [x, y]` for that slot in `photos/slots.json`, as fractions of the width and height (for example `[0.6, 0.4]`).
+3. Run `npm run photos -- <slot>` (or `npm run photos` for all), then `npm run build`.
+4. Open `/photo-lab.html` to drag a before/after slider over every photo.
+
+If a slot has no original, the pipeline falls back to a generated illustration so the page never shows a gap.
+
+| Slot | Shape | Where it appears | Current photo |
 | --- | --- | --- | --- |
-| `hero` | 3:2, 2400px+ | Homepage hero | The farm's best wide shot: horses in the field at golden hour |
-| `story` | 4:5 | Homepage welcome, Our Farm | The barn or the farm entrance |
-| `lessons` | 4:5 | Homepage "Riding lessons" card | A student mid-lesson in the arena |
-| `intro` | 4:5 | Homepage card, Lessons page | A child meeting or grooming a horse |
-| `camp` | 4:5 | Homepage card, Camp page | Campers with horses, big smiles |
-| `boarding` | 4:5 | Homepage card, Boarding page | Horses turned out in pasture |
-| `honey` | 1:1 | Hive section | Honeycomb frame, jars of honey or the hives |
-| `facility-grass`, `facility-stone`, `facility-indoor`, `facility-dressage`, `facility-track`, `facility-pasture` | 4:3 | "The grounds" tiles | Each arena or area, empty and tidy |
-| `horse-archie`, `horse-cloud`, `horse-dorito`, `horse-tatertot` | 4:5 | Meet the herd | Portrait of each horse, ears up |
-| `team-ellie`, `team-lina`, `team-merideth`, `team-victoria`, `team-april`, `team-jim` | 1:1 | Our Farm → team | Head-and-shoulders, outdoors, natural light |
-| `banner` | 21:9 | Homepage camp banner | Wide sunset or field shot |
-| `page-lessons`, `page-boarding`, `page-camp`, `page-about`, `page-contact` | 16:9 | Top of each page | Wide, atmospheric shots |
+| `hero` | 3:2 | Homepage hero | The lane between a horse's ears |
+| `story` | 4:5 | Homepage welcome, Our Farm | The barn at sunset |
+| `lessons`, `intro`, `camp`, `boarding` | 4:5 | Homepage program cards | Lesson, high five, young riders, horses by the barn |
+| `honey` | 1:1 | Hive section | The farm's hens (add a beehive or honey photo here when available) |
+| `facility-grass`, `facility-stone`, `facility-indoor`, `facility-dressage`, `facility-track`, `facility-pasture` | 4:3 | "The grounds" tiles | Each arena and area |
+| `horse-archie` … `horse-tatertot` (12) | 4:5 | Meet the herd | Each lesson horse's portrait |
+| `team-lina`, `team-merideth`, `team-victoria` | 1:1 | Our Farm → team | Each instructor riding |
+| `banner` | 21:9 | Homepage camp banner | Riders at sunset |
+| `page-lessons`, `page-boarding`, `page-camp`, `page-about`, `page-contact` | 16:9 | Top of each page | Wide farm photos |
 
-Photo tips: landscape shots for wide slots, the subject roughly centered (the cropper looks for the most interesting area), the largest originals you have, and JPG/PNG/WebP/TIFF. iPhone HEIC files need exporting to JPG first.
+The best upgrades from here: a real beehive or honey photo, a higher-resolution hero (at least 2400px wide), and a few golden-hour shots of the herd.
 
-To change the look of every photo at once, edit the `grade` settings at the top of `tools/photos.mjs` (warmth, saturation, matte, vignette, grain).
+To change the look of every photo at once, edit the `grade` settings at the top of `tools/photos.mjs`. Film grain is added by a tiny tiled texture in CSS rather than baked into the files, which keeps the photos small.
 
 ## Project structure
 
@@ -60,7 +67,7 @@ assets/js/        main.js (source) → main.min.js (built)
 assets/fonts/     self-hosted Fraunces + Instrument Sans (latin)
 assets/photos/    generated responsive images (don't edit by hand)
 assets/img/       favicons and the social share image
-photos/           slots.json + original/ (your source photos)
+photos/           slots.json + original/ (source photos)
 tools/            build, photo pipeline, placeholder art, link checker
 docs/             design research and the owner content checklist
 ```
@@ -91,4 +98,4 @@ Read [`docs/CONTENT-CHECKLIST.md`](docs/CONTENT-CHECKLIST.md). It lists every pr
 
 ## Credits
 
-Fonts: [Fraunces](https://fonts.google.com/specimen/Fraunces) and [Instrument Sans](https://fonts.google.com/specimen/Instrument+Sans) (SIL Open Font License). Illustrations, icons and logo mark are original to this project.
+Fonts: [Fraunces](https://fonts.google.com/specimen/Fraunces) and [Instrument Sans](https://fonts.google.com/specimen/Instrument+Sans) (SIL Open Font License). Photography © Horse & Hive Farm. Icons and the logo mark are original to this project.

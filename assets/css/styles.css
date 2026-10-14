@@ -2820,3 +2820,32 @@ body.menu-open {
 .lab-pending {
   align-content: start;
 }
+
+/* ---------- Film grain ----------
+   A tiny tiled noise texture over photos gives every image the same soft film
+   finish without baking noise into the files (noise doesn't compress). */
+
+.hero-media::after,
+.card-media::after,
+.arch::after,
+.tile::after,
+.person-photo::after,
+.hex-media::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('../img/grain.png') repeat;
+  background-size: 160px 160px;
+  mix-blend-mode: overlay;
+  opacity: 0.22;
+  pointer-events: none;
+}
+.person-photo {
+  position: relative;
+}
+.hex-media::after {
+  clip-path: inherit;
+}
+.tile figcaption {
+  z-index: 1;
+}

@@ -25,22 +25,57 @@ const extensions = ['.jpg', '.jpeg', '.png', '.webp', '.tif', '.tiff'];
 
 // The grade. Tweak here to change the look of every photo on the site at once.
 export const grade = {
-  levels: { lower: 0.5, upper: 99.7 }, // auto-levels percentiles
+  levels: { lower: 0.4, upper: 99.6 }, // auto-levels percentiles
   localContrast: null, // e.g. { width: 24, height: 24, maxSlope: 1.4 } for extra "pop" on flat, hazy shots
-  saturation: 0.9, // a touch below 1 reads as modern and calm
-  brightness: 1.03,
-  // Warm highlights, slightly cooler shadows (rows are output R, G, B).
-  warmth: [
-    [1.05, 0.03, -0.02],
-    [0.0, 1.0, 0.01],
-    [-0.02, 0.02, 0.94],
-  ],
-  matte: { slope: 0.95, lift: [10, 8, 6] }, // lifted blacks for a soft film look
-  sharpen: { sigma: 0.5, m1: 0.4, m2: 0.8 },
-  vignette: 0.2, // 0 disables
-  grain: 0.025, // 0 disables
-  quality: { avif: 52, webp: 78, before: 82 },
+  film: {
+    saturation: 0.88, // overall colour intensity; a touch below 1 reads calm and modern
+    greenDesat: 0.45, // extra calming for phone-camera "neon" greens (0 = off)
+    contrast: 0.32, // strength of the gentle S-curve (0 = linear)
+    blackLift: 0.035, // matte blacks
+    whiteRolloff: 0.025, // creamy, compressed highlights
+    shadowTint: [-0.012, 0.004, 0.016], // cool, slightly teal shadows
+    highlightTint: [0.04, 0.014, -0.03], // warm, golden highlights
+  },
+  sharpen: { sigma: 0.55, m1: 0.45, m2: 0.9 },
+  vignette: 0.18, // 0 disables
+  // Baked-in grain is off: random noise doesn't compress, so the site adds film grain
+  // with a tiny tiled texture in CSS instead (see .grain in styles.css).
+  grain: 0, // e.g. 0.03 to bake grain into the files
+  quality: { avif: 50, webp: 76, before: 78 },
+  labWidth: 1200, // size of the Photo Lab before/after images
 };
+
+// Film-style tone and colour pass on raw RGB pixels.
+function filmCurve(data, f) {
+  const smooth = (x) => x * x * (3 - 2 * x);
+  for (let i = 0; i < data.length; i += 3) {
+    let r = data[i] / 255;
+    let g = data[i + 1] / 255;
+    let b = data[i + 2] / 255;
+    const L = 0.2126 * r + 0.7152 * g + 0.0722 * b;
+    const max = Math.max(r, g, b);
+    const greenness = max > 0.02 ? Math.max(0, g - Math.max(r, b)) / max : 0;
+    const sat = f.saturation * (1 - f.greenDesat * greenness);
+    r = L + (r - L) * sat;
+    g = L + (g - L) * sat;
+    b = L + (b - L) * sat;
+    const sh = (1 - L) * (1 - L);
+    const hi = L * L;
+    r += sh * f.shadowTint[0] + hi * f.highlightTint[0];
+    g += sh * f.shadowTint[1] + hi * f.highlightTint[1];
+    b += sh * f.shadowTint[2] + hi * f.highlightTint[2];
+    const out = [r, g, b].map((c) => {
+      c = Math.min(1, Math.max(0, c));
+      c = c + f.contrast * (smooth(c) - c);
+      c = f.blackLift + c * (1 - f.blackLift - f.whiteRolloff);
+      return Math.round(c * 255);
+    });
+    data[i] = out[0];
+    data[i + 1] = out[1];
+    data[i + 2] = out[2];
+  }
+  return data;
+}
 
 async function findOriginal(slot) {
   for (const ext of extensions) {
@@ -72,30 +107,40 @@ async function grainLayer(w, h, strength) {
     .toBuffer();
 }
 
+// Crop to the slot's shape. `focus` is "attention" / "entropy" (automatic), or
+// [x, y] fractions marking the point to keep centred, e.g. [0.6, 0.4].
+async function cropTo(file, w, h, focus) {
+  const oriented = await sharp(file, { failOn: 'none' }).rotate().toColourspace('srgb').removeAlpha().png().toBuffer({ resolveWithObject: true });
+  const { width: sw, height: sh } = oriented.info;
+  if (Array.isArray(focus)) {
+    const target = w / h;
+    let cw = sw;
+    let ch = sh;
+    if (sw / sh > target) cw = Math.round(sh * target);
+    else ch = Math.round(sw / target);
+    const left = Math.round(Math.min(Math.max(focus[0] * sw - cw / 2, 0), sw - cw));
+    const top = Math.round(Math.min(Math.max(focus[1] * sh - ch / 2, 0), sh - ch));
+    return { buf: await sharp(oriented.data).extract({ left, top, width: cw, height: ch }).resize({ width: w, height: h, kernel: 'lanczos3' }).png().toBuffer(), srcWidth: cw };
+  }
+  const position = focus === 'entropy' ? sharp.strategy.entropy : focus === 'attention' ? sharp.strategy.attention : focus ?? 'centre';
+  const srcWidth = Math.min(sw, Math.round((sh * w) / h));
+  return { buf: await sharp(oriented.data).resize({ width: w, height: h, fit: 'cover', position, kernel: 'lanczos3' }).png().toBuffer(), srcWidth };
+}
+
 // Build the full-resolution graded master. Each stage runs as its own pass
 // because sharp applies operations within a single pipeline in a fixed order.
 async function gradeMaster(file, [rw, rh], maxWidth, focus) {
   const w = maxWidth;
   const h = Math.round((maxWidth * rh) / rw);
-  const position = focus === 'attention' ? sharp.strategy.attention : focus === 'entropy' ? sharp.strategy.entropy : focus ?? 'centre';
+  const { buf: cropped, srcWidth } = await cropTo(file, w, h, focus);
+  if (srcWidth < w * 0.95) console.warn(`  ! ${path.basename(file)} is only ${srcWidth}px wide after cropping; largest size (${w}px) is upscaled`);
+  const before = cropped;
 
-  let buf = await sharp(file, { failOn: 'none' })
-    .rotate()
-    .resize({ width: w, height: h, fit: 'cover', position, kernel: 'lanczos3' })
-    .toColourspace('srgb')
-    .removeAlpha()
-    .png()
-    .toBuffer();
-  const before = buf;
-
-  buf = await sharp(buf).normalise(grade.levels).png().toBuffer();
+  let buf = await sharp(cropped).normalise(grade.levels).png().toBuffer();
   if (grade.localContrast) buf = await sharp(buf).clahe(grade.localContrast).png().toBuffer();
-  buf = await sharp(buf).modulate({ saturation: grade.saturation, brightness: grade.brightness }).png().toBuffer();
-  buf = await sharp(buf).recomb(grade.warmth).png().toBuffer();
-  buf = await sharp(buf)
-    .linear([grade.matte.slope, grade.matte.slope, grade.matte.slope], grade.matte.lift)
-    .png()
-    .toBuffer();
+  const raw = await sharp(buf).removeAlpha().raw().toBuffer({ resolveWithObject: true });
+  filmCurve(raw.data, grade.film);
+  buf = await sharp(raw.data, { raw: raw.info }).png().toBuffer();
 
   const layers = [];
   if (grade.vignette) layers.push({ input: vignetteSvg(w, h, grade.vignette), blend: 'multiply' });
@@ -113,12 +158,15 @@ async function artMaster(art, [rw, rh], maxWidth) {
   return { master, w, h };
 }
 
-async function writeSizes(slot, master, [rw, rh], widths, { sharpen, before }) {
+// `soften` (a blur sigma) replaces sharpening for photos that sit behind text
+// overlays: it reads as film softness and roughly halves the file size.
+async function writeSizes(slot, master, [rw, rh], widths, { sharpen, soften, before }) {
   const files = [];
   for (const width of widths) {
     const height = Math.round((width * rh) / rw);
     let img = sharp(master).resize({ width, height, kernel: 'lanczos3' });
-    if (sharpen) img = img.sharpen(grade.sharpen);
+    if (soften) img = img.blur(soften);
+    else if (sharpen) img = img.sharpen(grade.sharpen);
     const resized = await img.png().toBuffer();
     const base = path.join(outDir, `${slot}-${width}`);
     await sharp(resized).avif({ quality: grade.quality.avif, effort: 4 }).toFile(base + '.avif');
@@ -126,7 +174,7 @@ async function writeSizes(slot, master, [rw, rh], widths, { sharpen, before }) {
     files.push(`${slot}-${width}`);
   }
   if (before) {
-    const width = widths[widths.length - 1];
+    const width = Math.min(widths[widths.length - 1], grade.labWidth);
     const height = Math.round((width * rh) / rw);
     await sharp(before).resize({ width, height }).jpeg({ quality: grade.quality.before, mozjpeg: true }).toFile(path.join(outDir, `${slot}-before.jpg`));
     await sharp(master).resize({ width, height }).sharpen(grade.sharpen).jpeg({ quality: grade.quality.before, mozjpeg: true }).toFile(path.join(outDir, `${slot}-after.jpg`));
@@ -160,7 +208,7 @@ async function main() {
     await cleanSlot(slot);
     if (original) {
       const { master, before } = await gradeMaster(original, cfg.ratio, maxWidth, cfg.focus);
-      await writeSizes(slot, master, cfg.ratio, cfg.widths, { sharpen: true, before });
+      await writeSizes(slot, master, cfg.ratio, cfg.widths, { sharpen: true, soften: cfg.soften, before });
       manifest[slot] = { source: 'photo', original: path.relative(root, original), ratio: cfg.ratio, widths: cfg.widths, alt: cfg.alt };
       console.log(`✓ ${slot.padEnd(18)} photo  ← ${path.relative(root, original)}`);
     } else {
@@ -171,6 +219,11 @@ async function main() {
     }
   }
   for (const slot of Object.keys(manifest)) if (!slots[slot]) delete manifest[slot];
+  // Remove generated images for slots that no longer exist in slots.json.
+  for (const file of await fs.readdir(outDir)) {
+    const slot = file.replace(/-(\d+|before|after)\.(avif|webp|jpg)$/, '');
+    if (slot !== file && !slots[slot]) await fs.unlink(path.join(outDir, file));
+  }
   await fs.writeFile(manifestFile, JSON.stringify(manifest, null, 2) + '\n');
   // Also expose the manifest as a script so the Photo Lab page works from file:// too.
   await fs.writeFile(path.join(outDir, 'manifest.js'), `window.HH_PHOTOS = ${JSON.stringify(manifest)};\n`);

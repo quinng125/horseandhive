@@ -11,7 +11,7 @@
 //   {{> header}}                          include src/partials/header.html
 //   {{title}}                             front-matter or site value
 //   {{pic hero sizes="100vw" eager}}      responsive <picture> for a photo slot
-//     options: sizes="..." class="..." alt="..." eager (above-the-fold, high priority)
+//     options: sizes="..." class="..." alt="..." pos="50% 20%" eager (above-the-fold, high priority)
 
 import fs from 'node:fs/promises';
 import path from 'node:path';
@@ -33,6 +33,7 @@ const site = {
   region: 'MD',
   zip: '21082',
   facebook: 'https://www.facebook.com/horseandhive/',
+  instagram: 'https://www.instagram.com/horseandhive/',
   year: String(new Date().getFullYear()),
 };
 
@@ -70,7 +71,9 @@ function picture(args) {
   const alt = opts.alt ?? cfg.alt;
   const loading = opts.eager ? 'fetchpriority="high"' : 'loading="lazy"';
   const cls = opts.class ? ` class="${attr(opts.class)}"` : '';
-  return `<picture><source type="image/avif" srcset="${set('avif')}" sizes="${attr(sizes)}"><img${cls} src="assets/photos/${slot}-${mid}.webp" srcset="${set('webp')}" sizes="${attr(sizes)}" width="${max}" height="${Math.round((max * rh) / rw)}" alt="${attr(alt)}" ${loading} decoding="async"></picture>`;
+  // pos="50% 20%" sets object-position, for images that a layout crops further.
+  const style = opts.pos ? ` style="object-position:${attr(opts.pos)}"` : '';
+  return `<picture><source type="image/avif" srcset="${set('avif')}" sizes="${attr(sizes)}"><img${cls}${style} src="assets/photos/${slot}-${mid}.webp" srcset="${set('webp')}" sizes="${attr(sizes)}" width="${max}" height="${Math.round((max * rh) / rw)}" alt="${attr(alt)}" ${loading} decoding="async"></picture>`;
 }
 
 async function render(text, vars, depth = 0) {

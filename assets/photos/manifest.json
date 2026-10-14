@@ -1,19 +1,20 @@
 {
   "hero": {
-    "source": "art",
+    "source": "photo",
+    "original": "photos/original/hero.jpg",
     "ratio": [
       3,
       2
     ],
     "widths": [
       960,
-      1600,
-      2400
+      1600
     ],
-    "alt": "Horses grazing in the pasture at Horse & Hive Farm at golden hour"
+    "alt": "The view between a horse’s ears down the fenced lane at Horse & Hive Farm, with horses grazing on both sides"
   },
   "story": {
-    "source": "art",
+    "source": "photo",
+    "original": "photos/original/story.jpg",
     "ratio": [
       4,
       5
@@ -22,10 +23,11 @@
       640,
       1080
     ],
-    "alt": "The barn at the corner of Long Green Pike and Hydes Road"
+    "alt": "The barn at Horse & Hive Farm at sunset"
   },
   "lessons": {
-    "source": "art",
+    "source": "photo",
+    "original": "photos/original/lessons.jpg",
     "ratio": [
       4,
       5
@@ -34,10 +36,11 @@
       640,
       1080
     ],
-    "alt": "A student riding a lesson horse in the sand arena"
+    "alt": "A rider trotting a bay horse in the sand arena"
   },
   "intro": {
-    "source": "art",
+    "source": "photo",
+    "original": "photos/original/intro.jpg",
     "ratio": [
       4,
       5
@@ -46,10 +49,11 @@
       640,
       1080
     ],
-    "alt": "A young rider meeting a lesson horse for the first time"
+    "alt": "An instructor and a young rider sharing a high five after a lesson"
   },
   "camp": {
-    "source": "art",
+    "source": "photo",
+    "original": "photos/original/camp.jpg",
     "ratio": [
       4,
       5
@@ -58,10 +62,11 @@
       640,
       1080
     ],
-    "alt": "Summer campers with their horses in the field"
+    "alt": "Two young riders in boots and helmets with a palomino pony"
   },
   "boarding": {
-    "source": "art",
+    "source": "photo",
+    "original": "photos/original/boarding.jpg",
     "ratio": [
       4,
       5
@@ -70,10 +75,11 @@
       640,
       1080
     ],
-    "alt": "Boarded horses turned out in a rolling pasture"
+    "alt": "Horses grazing in a pasture beside the barn"
   },
   "honey": {
-    "source": "art",
+    "source": "photo",
+    "original": "photos/original/honey.jpg",
     "ratio": [
       1,
       1
@@ -82,10 +88,11 @@
       640,
       1080
     ],
-    "alt": "Honeycomb from the hives at Horse & Hive Farm"
+    "alt": "Hens from the farm’s flock"
   },
   "facility-grass": {
-    "source": "art",
+    "source": "photo",
+    "original": "photos/original/facility-grass.jpg",
     "ratio": [
       4,
       3
@@ -94,10 +101,11 @@
       640,
       1080
     ],
-    "alt": "The lighted grass arena with jumps"
+    "alt": "The grass arena with log jumps and the barns behind"
   },
   "facility-stone": {
-    "source": "art",
+    "source": "photo",
+    "original": "photos/original/facility-stone.jpg",
     "ratio": [
       4,
       3
@@ -106,10 +114,11 @@
       640,
       1080
     ],
-    "alt": "The large stone dust arena with lights and jumps"
+    "alt": "The stone dust arena under the lights at dusk"
   },
   "facility-indoor": {
-    "source": "art",
+    "source": "photo",
+    "original": "photos/original/facility-indoor.jpg",
     "ratio": [
       4,
       3
@@ -118,10 +127,11 @@
       640,
       1080
     ],
-    "alt": "The small indoor for bad-weather riding"
+    "alt": "The small indoor arena"
   },
   "facility-dressage": {
-    "source": "art",
+    "source": "photo",
+    "original": "photos/original/facility-dressage.jpg",
     "ratio": [
       4,
       3
@@ -130,10 +140,11 @@
       640,
       1080
     ],
-    "alt": "The dressage court and trail obstacles"
+    "alt": "The dressage court with white rails"
   },
   "facility-track": {
-    "source": "art",
+    "source": "photo",
+    "original": "photos/original/facility-track.jpg",
     "ratio": [
       4,
       3
@@ -142,10 +153,11 @@
       640,
       1080
     ],
-    "alt": "The conditioning track around the fields"
+    "alt": "The track around the fields"
   },
   "facility-pasture": {
-    "source": "art",
+    "source": "photo",
+    "original": "photos/original/facility-pasture.jpg",
     "ratio": [
       4,
       3
@@ -154,10 +166,11 @@
       640,
       1080
     ],
-    "alt": "Pastures with run-in sheds"
+    "alt": "Horses grazing in a pasture with a run-in shed"
   },
   "horse-archie": {
-    "source": "art",
+    "source": "photo",
+    "original": "photos/original/horse-archie.jpg",
     "ratio": [
       4,
       5
@@ -166,10 +179,11 @@
       480,
       800
     ],
-    "alt": "Archie, an off-track Thoroughbred lesson horse"
+    "alt": "Archie, an off-the-track Thoroughbred lesson horse"
   },
   "horse-cloud": {
-    "source": "art",
+    "source": "photo",
+    "original": "photos/original/horse-cloud.jpg",
     "ratio": [
       4,
       5
@@ -178,10 +192,11 @@
       480,
       800
     ],
-    "alt": "Cloud, a Paint lesson horse who loves pony games"
+    "alt": "Cloud, a Paint lesson horse"
   },
   "horse-dorito": {
-    "source": "art",
+    "source": "photo",
+    "original": "photos/original/horse-dorito.jpg",
     "ratio": [
       4,
       5
@@ -190,10 +205,11 @@
       480,
       800
     ],
-    "alt": "Dorito, a Tennessee Walking Horse who teaches gaited riding"
+    "alt": "Dorito, a Tennessee Walking Horse"
   },
   "horse-tatertot": {
-    "source": "art",
+    "source": "photo",
+    "original": "photos/original/horse-tatertot.jpg",
     "ratio": [
       4,
       5
@@ -204,20 +220,9 @@
     ],
     "alt": "Tater Tot, a Haflinger lesson pony"
   },
-  "team-ellie": {
-    "source": "art",
-    "ratio": [
-      1,
-      1
-    ],
-    "widths": [
-      400,
-      720
-    ],
-    "alt": "Ellie, riding instructor"
-  },
   "team-lina": {
-    "source": "art",
+    "source": "photo",
+    "original": "photos/original/team-lina.jpg",
     "ratio": [
       1,
       1
@@ -226,10 +231,11 @@
       400,
       720
     ],
-    "alt": "Lina, riding instructor"
+    "alt": "Lina riding a bay horse in the arena"
   },
   "team-merideth": {
-    "source": "art",
+    "source": "photo",
+    "original": "photos/original/team-merideth.jpg",
     "ratio": [
       1,
       1
@@ -238,10 +244,11 @@
       400,
       720
     ],
-    "alt": "Merideth, riding instructor"
+    "alt": "Merideth jumping a cross-country fence"
   },
   "team-victoria": {
-    "source": "art",
+    "source": "photo",
+    "original": "photos/original/team-victoria.jpg",
     "ratio": [
       1,
       1
@@ -250,23 +257,24 @@
       400,
       720
     ],
-    "alt": "Victoria, riding instructor"
+    "alt": "Victoria jumping a show-jumping fence"
   },
   "banner": {
-    "source": "art",
+    "source": "photo",
+    "original": "photos/original/banner.jpg",
     "ratio": [
       21,
       9
     ],
     "widths": [
       960,
-      1600,
-      2400
+      1440
     ],
-    "alt": "The fields at Horse & Hive Farm at sunset"
+    "alt": "Riders on horseback in the arena at sunset"
   },
   "page-lessons": {
-    "source": "art",
+    "source": "photo",
+    "original": "photos/original/page-lessons.jpg",
     "ratio": [
       16,
       9
@@ -274,12 +282,13 @@
     "widths": [
       960,
       1600,
-      2400
+      1920
     ],
-    "alt": "The sand arena set up for a riding lesson"
+    "alt": "A young rider in a lesson with her instructor"
   },
   "page-boarding": {
-    "source": "art",
+    "source": "photo",
+    "original": "photos/original/page-boarding.jpg",
     "ratio": [
       16,
       9
@@ -287,12 +296,13 @@
     "widths": [
       960,
       1600,
-      2400
+      1920
     ],
-    "alt": "Horses at home in the pastures at Horse & Hive Farm"
+    "alt": "Two horses grazing by the barn"
   },
   "page-camp": {
-    "source": "art",
+    "source": "photo",
+    "original": "photos/original/page-camp.jpg",
     "ratio": [
       16,
       9
@@ -300,12 +310,13 @@
     "widths": [
       960,
       1600,
-      2400
+      1920
     ],
-    "alt": "A sunny summer day on the farm"
+    "alt": "Campers and instructors with their horses in the arena"
   },
   "page-about": {
-    "source": "art",
+    "source": "photo",
+    "original": "photos/original/page-about.jpg",
     "ratio": [
       16,
       9
@@ -313,12 +324,13 @@
     "widths": [
       960,
       1600,
-      2400
+      2000
     ],
-    "alt": "The barn and fields at Horse & Hive Farm"
+    "alt": "Two horses resting in the field"
   },
   "page-contact": {
-    "source": "art",
+    "source": "photo",
+    "original": "photos/original/page-contact.jpg",
     "ratio": [
       16,
       9
@@ -328,30 +340,110 @@
       1600,
       2400
     ],
-    "alt": "The farm entrance on Long Green Pike"
+    "alt": "The fenced lane leading to the barns at Horse & Hive Farm"
   },
-  "team-april": {
-    "source": "art",
+  "horse-cannoli": {
+    "source": "photo",
+    "original": "photos/original/horse-cannoli.jpg",
     "ratio": [
-      1,
-      1
+      4,
+      5
     ],
     "widths": [
-      400,
-      720
+      480,
+      800
     ],
-    "alt": "April, farm manager and trainer"
+    "alt": "Cannoli, a Haflinger with a flowing mane"
   },
-  "team-jim": {
-    "source": "art",
+  "horse-mater": {
+    "source": "photo",
+    "original": "photos/original/horse-mater.jpg",
     "ratio": [
-      1,
-      1
+      4,
+      5
     ],
     "widths": [
-      400,
-      720
+      480,
+      800
     ],
-    "alt": "Jim McDonald, clinician"
+    "alt": "Mater, an off-the-track Thoroughbred"
+  },
+  "horse-mani": {
+    "source": "photo",
+    "original": "photos/original/horse-mani.jpg",
+    "ratio": [
+      4,
+      5
+    ],
+    "widths": [
+      480,
+      800
+    ],
+    "alt": "Manicotti (Mani), a Quarter Horse"
+  },
+  "horse-meatball": {
+    "source": "photo",
+    "original": "photos/original/horse-meatball.jpg",
+    "ratio": [
+      4,
+      5
+    ],
+    "widths": [
+      480,
+      800
+    ],
+    "alt": "Meatball, an Arab cross"
+  },
+  "horse-mocha": {
+    "source": "photo",
+    "original": "photos/original/horse-mocha.jpg",
+    "ratio": [
+      4,
+      5
+    ],
+    "widths": [
+      480,
+      800
+    ],
+    "alt": "Mocha, a Draft cross"
+  },
+  "horse-peaches": {
+    "source": "photo",
+    "original": "photos/original/horse-peaches.jpg",
+    "ratio": [
+      4,
+      5
+    ],
+    "widths": [
+      480,
+      800
+    ],
+    "alt": "Peaches, a Haflinger lesson pony"
+  },
+  "horse-sprite": {
+    "source": "photo",
+    "original": "photos/original/horse-sprite.jpg",
+    "ratio": [
+      4,
+      5
+    ],
+    "widths": [
+      480,
+      800
+    ],
+    "alt": "Sprite, a Pony of the Americas"
+  },
+  "horse-sundae": {
+    "source": "photo",
+    "original": "photos/original/horse-sundae.jpg",
+    "ratio": [
+      4,
+      5
+    ],
+    "widths": [
+      480,
+      800
+    ],
+    "alt": "Sundae, an Arab cross and the herd’s senior member"
   }
 }

@@ -17,11 +17,12 @@ Horse & Hive Farm sits at 13220 Long Green Pike, Hydes, MD 21082, at the corner 
 
 **Where the current site holds it back**
 
-*(Based on the site's page structure and published content. The live pages and their photos couldn't be loaded from the build environment, so this doesn't judge the existing visuals.)*
+*(Based on the site's page structure, published content and its media library of about 320 images.)*
 
 - Content is spread across 20+ thin WordPress pages: separate pages for each lesson type, multi-step registration pages, newsletters and past events. Key facts like prices, ages and what to wear live on different pages.
 - Some information is stale (a 2024 fall camp, 2022 clinic dates, a "Summer Camp 27'" header) and some conflicts (two sets of lesson prices, two review counts), which undermines trust.
 - The farm's most distinctive story, the bees behind the name, appears only in passing.
+- The photo library is genuinely good (real horses, kids, arenas and sunsets) but inconsistent: mixed phone-camera color, crops and resolutions, plus stock and theme-demo images mixed in. The redesign uses only real farm photos and runs every one through the same grade.
 
 ## 2. What the best sites in this space do
 
@@ -48,7 +49,7 @@ Horse & Hive Farm sits at 13220 Long Green Pike, Hydes, MD 21082, at the corner 
 | Consolidate thin pages | Twenty-plus WordPress pages became six focused pages with anchored sections |
 | Trust signals | 4.6★ / 53 reviews, real testimonials, CHA credentials, named horses and instructors |
 | Restrained motion | Staggered headline reveal, scroll reveals, gentle parallax and a slow marquee, all disabled for visitors who prefer reduced motion |
-| Speed & accessibility | No framework, self-hosted Latin-subset fonts, AVIF/WebP responsive images, minified assets; in local Lighthouse runs (simulated mobile), 94–95 performance and 100 accessibility, best practices and SEO |
+| Speed & accessibility | No framework, self-hosted Latin-subset fonts, AVIF/WebP responsive images, minified assets; in local Lighthouse runs (simulated mobile), 90–91 performance and 100 accessibility, best practices and SEO |
 | Local SEO | LocalBusiness structured data, descriptive titles and meta descriptions, a sitemap, social cards, and pages that answer local queries ("riding lessons Hydes MD") |
 
 ## 4. Photography direction
