@@ -27,7 +27,7 @@ Everything on the new site was taken from the current horseandhive.com, its PDFs
 
 ## Photos
 
-- [ ] All 56 photos come from the current site's media library (plus the farm's own logo mark). Swap in anything newer or better, especially a beehive or honey photo for the hive section (it currently shows the hens) and a higher-resolution hero.
+- [ ] All 60 photos come from the current site's media library (plus the farm's own logo mark). Swap in anything newer or better, especially a beehive or honey photo for the hive section (it currently shows the hens) and a higher-resolution hero.
 - [ ] The entrance-sign photo on the Contact page shows a neighboring house behind the sign; the current site notes that house isn't part of the farm. Replace it if you have a cleaner shot.
 - [ ] Camp gallery photos show campers' faces. Confirm the farm has permission to use them (they're already on the current site).
 

@@ -731,5 +731,57 @@
       620
     ],
     "alt": "Campers at the fence with two horses in fly masks"
+  },
+  "camp-9": {
+    "source": "photo",
+    "original": "photos/original/camp-9.jpg",
+    "ratio": [
+      1,
+      1
+    ],
+    "widths": [
+      400,
+      620
+    ],
+    "alt": "A camper in a pink helmet leading a Haflinger"
+  },
+  "camp-10": {
+    "source": "photo",
+    "original": "photos/original/camp-10.jpg",
+    "ratio": [
+      1,
+      1
+    ],
+    "widths": [
+      400,
+      620
+    ],
+    "alt": "A smiling camper at the paddock fence"
+  },
+  "camp-11": {
+    "source": "photo",
+    "original": "photos/original/camp-11.jpg",
+    "ratio": [
+      1,
+      1
+    ],
+    "widths": [
+      400,
+      450
+    ],
+    "alt": "A rider taking a jump in the sand arena"
+  },
+  "camp-12": {
+    "source": "photo",
+    "original": "photos/original/camp-12.jpg",
+    "ratio": [
+      1,
+      1
+    ],
+    "widths": [
+      400,
+      620
+    ],
+    "alt": "A camper riding a grey pony in the arena"
   }
 }

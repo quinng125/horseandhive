@@ -763,5 +763,56 @@
     ],
     "focus": "attention",
     "alt": "Campers at the fence with two horses in fly masks"
+  },
+  "camp-9": {
+    "ratio": [
+      1,
+      1
+    ],
+    "widths": [
+      400,
+      620
+    ],
+    "focus": [
+      1.0,
+      0.5
+    ],
+    "alt": "A camper in a pink helmet leading a Haflinger"
+  },
+  "camp-10": {
+    "ratio": [
+      1,
+      1
+    ],
+    "widths": [
+      400,
+      620
+    ],
+    "focus": "attention",
+    "alt": "A smiling camper at the paddock fence"
+  },
+  "camp-11": {
+    "ratio": [
+      1,
+      1
+    ],
+    "widths": [
+      400,
+      450
+    ],
+    "focus": "attention",
+    "alt": "A rider taking a jump in the sand arena"
+  },
+  "camp-12": {
+    "ratio": [
+      1,
+      1
+    ],
+    "widths": [
+      400,
+      620
+    ],
+    "focus": "attention",
+    "alt": "A camper riding a grey pony in the arena"
   }
 }

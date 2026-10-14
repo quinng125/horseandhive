@@ -52,7 +52,7 @@ Every slot must have a real photo. If an original is missing, `npm run photos` s
 | `value-*`, `about-*` | Our Farm → values and "more at the farm" |
 | `lessons-companion`, `lessons-wear`, `lessons-clinic` | Lessons page sections |
 | `boarding-tack`, `boarding-trainer` | Boarding amenities |
-| `camp-1` … `camp-8` | Camp page gallery |
+| `camp-1` … `camp-12` | Camp page gallery |
 | `contact-sign` | Contact page: the entrance sign |
 
 The best upgrades from here: a real beehive or honey photo, a higher-resolution hero (at least 2400px wide), and a few golden-hour shots of the herd.
