@@ -1,0 +1,54 @@
+<body>
+{{> icons}}
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="./">
+      <svg class="brand-mark" aria-hidden="true"><use href="#i-mark"/></svg>
+      <span class="brand-text">
+        <span class="brand-name">Horse <em>&amp;</em> Hive</span>
+        <span class="brand-sub">Farm · Hydes, MD</span>
+      </span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="lessons.html" data-nav="lessons">Lessons</a>
+      <a href="boarding.html" data-nav="boarding">Boarding</a>
+      <a href="camp.html" data-nav="camp">Camp</a>
+      <a href="about.html" data-nav="about">Our Farm</a>
+      <a href="contact.html" data-nav="contact">Visit</a>
+    </nav>
+    <div class="header-actions">
+      <a class="header-phone" href="{{phoneHref}}"><svg aria-hidden="true"><use href="#i-phone"/></svg>{{phone}}</a>
+      <a class="btn btn--honey btn--sm header-cta" href="contact.html?interest=intro#enquire">Book a lesson</a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu">
+        <span class="visually-hidden">Open menu</span>
+        <span class="menu-toggle-lines" aria-hidden="true"><span></span><span></span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobile-menu" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Menu">
+  <div class="mobile-menu-top">
+    <a class="brand" href="./">
+      <svg class="brand-mark" aria-hidden="true"><use href="#i-mark"/></svg>
+      <span class="brand-text"><span class="brand-name">Horse <em>&amp;</em> Hive</span><span class="brand-sub">Farm · Hydes, MD</span></span>
+    </a>
+    <button class="mobile-menu-close" type="button"><span class="visually-hidden">Close menu</span><svg aria-hidden="true"><use href="#i-close"/></svg></button>
+  </div>
+  <nav aria-label="Mobile">
+    <ol>
+      <li><a href="./" data-nav="home">Home</a></li>
+      <li><a href="lessons.html" data-nav="lessons">Lessons</a></li>
+      <li><a href="boarding.html" data-nav="boarding">Boarding</a></li>
+      <li><a href="camp.html" data-nav="camp">Summer Camp</a></li>
+      <li><a href="about.html" data-nav="about">Our Farm</a></li>
+      <li><a href="contact.html" data-nav="contact">Visit &amp; Contact</a></li>
+    </ol>
+  </nav>
+  <div class="mobile-menu-foot">
+    <a class="btn btn--honey btn--block" href="contact.html?interest=intro#enquire">Book your first lesson <svg class="arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+    <a class="btn btn--ghost btn--block" href="{{phoneHref}}"><svg class="arrow" aria-hidden="true"><use href="#i-phone"/></svg> Call {{phone}}</a>
+    <p>{{street}}, {{city}}, {{region}} {{zip}}</p>
+  </div>
+</div>

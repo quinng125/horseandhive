@@ -1,0 +1,26 @@
+{
+  "name": "horse-and-hive-farm",
+  "version": "1.0.0",
+  "description": "Website for Horse & Hive Farm, Hydes, Maryland",
+  "scripts": {
+    "photos": "node tools/photos.mjs",
+    "build": "node tools/build.mjs",
+    "dev": "node tools/build.mjs && npx --yes serve -l 5173 .",
+    "check": "node tools/check.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/quinng125/horseandhive.git"
+  },
+  "bugs": {
+    "url": "https://github.com/quinng125/horseandhive/issues"
+  },
+  "homepage": "https://github.com/quinng125/horseandhive#readme",
+  "devDependencies": {
+    "esbuild": "^0.24.0",
+    "sharp": "^0.33.5"
+  },
+  "private": true,
+  "type": "module",
+  "license": "UNLICENSED"
+}

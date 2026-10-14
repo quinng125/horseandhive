@@ -1,0 +1,139 @@
+---
+title: Visit & Contact
+description: Book a riding lesson, join the boarding waitlist or ask about summer camp at Horse & Hive Farm, 13220 Long Green Pike, Hydes, MD 21082. Call (443) 606-4639.
+nav: contact
+---
+{{> head}}
+{{> header}}
+<main id="main">
+
+  <section class="page-hero" aria-labelledby="page-title">
+    <div class="hero-media">{{pic page-contact sizes="100vw" eager}}</div>
+    <div class="container hero-content">
+      <ol class="breadcrumbs fade-up" style="--d:.1s"><li><a href="./">Home</a></li><li aria-current="page">Visit &amp; contact</li></ol>
+      <p class="eyebrow fade-up" style="--d:.2s">Visit &amp; contact</p>
+      <h1 class="h1" id="page-title">Let's get you <em>in the saddle.</em></h1>
+      <p class="hero-sub fade-up" style="--d:.15s">Tell us a little about the rider and what you're looking for, and we'll be in touch to find the right horse, instructor and time.</p>
+    </div>
+  </section>
+
+  <section class="section" id="enquire" aria-labelledby="enquire-title">
+    <div class="container visit">
+      <div class="stack" style="--stack:1.75rem">
+        <p class="eyebrow">Get in touch</p>
+        <h2 class="h1" id="enquire-title">We'd love to <em>hear from you.</em></h2>
+        <p class="lead">The quickest way to book is a phone call. Prefer email? Use the form and it'll open a ready-to-send message.</p>
+        <ul class="contact-list">
+          <li><span>Phone</span><a href="{{phoneHref}}">{{phone}}</a></li>
+          <li><span>Email</span><a href="mailto:{{email}}">{{email}}</a></li>
+          <li><span>Address</span><a href="https://www.google.com/maps/dir/?api=1&amp;destination=13220+Long+Green+Pike%2C+Hydes%2C+MD+21082" rel="noopener" target="_blank">{{street}}<br>{{city}}, {{region}} {{zip}}</a></li>
+          <li><span>Lessons</span><p>Six days a week, by appointment</p></li>
+          <li><span>Social</span><a href="{{facebook}}" rel="noopener" target="_blank">Facebook · @horseandhive</a></li>
+        </ul>
+        <ol class="steps">
+          <li><h3>We reply</h3><p>We'll get back to you to talk through goals and experience.</p></li>
+          <li><h3>We match</h3><p>We pair the rider with the right horse and instructor.</p></li>
+          <li><h3>You ride</h3><p>Show up in long pants and boots. We'll handle the rest.</p></li>
+        </ol>
+      </div>
+
+      <form class="form" data-enquiry="{{email}}" novalidate>
+        <div class="stack" style="--stack:.5rem">
+          <h3 class="h3">Send an enquiry</h3>
+          <p class="form-small">Fields marked * are required.</p>
+        </div>
+        <fieldset class="chips">
+          <legend>What are you interested in?</legend>
+          <label class="chip"><input type="radio" name="interest" value="Introductory lesson" data-slug="intro" checked><span>Introductory lesson</span></label>
+          <label class="chip"><input type="radio" name="interest" value="Riding lessons" data-slug="lessons"><span>Riding lessons</span></label>
+          <label class="chip"><input type="radio" name="interest" value="Summer camp" data-slug="camp"><span>Summer camp</span></label>
+          <label class="chip"><input type="radio" name="interest" value="Boarding waitlist" data-slug="boarding"><span>Boarding waitlist</span></label>
+          <label class="chip"><input type="radio" name="interest" value="Companion program" data-slug="companion"><span>Companion program</span></label>
+          <label class="chip"><input type="radio" name="interest" value="Clinics and events" data-slug="clinics"><span>Clinics &amp; events</span></label>
+          <label class="chip"><input type="radio" name="interest" value="Honey and eggs" data-slug="honey"><span>Honey &amp; eggs</span></label>
+          <label class="chip"><input type="radio" name="interest" value="Something else" data-slug="other"><span>Something else</span></label>
+        </fieldset>
+        <div class="form-row">
+          <div class="field"><label for="f-name">Your name *</label><input id="f-name" name="name" type="text" autocomplete="name" required></div>
+          <div class="field"><label for="f-email">Email *</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
+        </div>
+        <div class="form-row">
+          <div class="field"><label for="f-phone">Phone <span class="hint">(optional)</span></label><input id="f-phone" name="phone" type="tel" autocomplete="tel"></div>
+          <div class="field"><label for="f-age">Rider's age <span class="hint">(optional)</span></label><input id="f-age" name="rider-age" type="text" inputmode="numeric" placeholder="e.g. 8, or adult"></div>
+        </div>
+        <div class="form-row">
+          <div class="field">
+            <label for="f-exp">Riding experience</label>
+            <select id="f-exp" name="experience">
+              <option value="">Choose one</option>
+              <option>None yet</option>
+              <option>A few rides</option>
+              <option>Comfortable at walk and trot</option>
+              <option>Confident at walk, trot and canter</option>
+              <option>Jumping or advanced</option>
+            </select>
+          </div>
+          <div class="field"><label for="f-days">Best days or times <span class="hint">(optional)</span></label><input id="f-days" name="days" type="text" placeholder="e.g. weekday afternoons"></div>
+        </div>
+        <div class="field"><label for="f-msg">Message *</label><textarea id="f-msg" name="message" required placeholder="Tell us about the rider and what you'd love to do."></textarea></div>
+        <button class="btn btn--honey btn--block" type="submit">Send enquiry <svg class="arrow" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+        <div class="form-success" role="status" tabindex="-1">
+          <strong>Your email app should open with the message ready to send.</strong>
+          <span>If nothing happened, email us directly at <a href="mailto:{{email}}">{{email}}</a> or call <a href="{{phoneHref}}">{{phone}}</a>.</span>
+        </div>
+        <p class="form-small">Sending opens your email app with your message filled in, ready to send.</p>
+      </form>
+    </div>
+  </section>
+
+  <section class="section section--dark" aria-labelledby="directions-title">
+    <div class="container visit">
+      <div class="stack" style="--stack:1.5rem">
+        <p class="eyebrow">Directions</p>
+        <h2 class="h1" id="directions-title">At the corner of Long Green Pike <em>&amp; Hydes Road.</em></h2>
+        <p class="lead">We're in Hydes, in northern Baltimore County, an easy drive from Towson, Perry Hall, Fallston and Bel Air. Please call ahead before visiting; lessons and visits are by appointment.</p>
+        <div class="btn-row">
+          <a class="btn btn--honey" href="https://www.google.com/maps/dir/?api=1&amp;destination=13220+Long+Green+Pike%2C+Hydes%2C+MD+21082" rel="noopener" target="_blank">Open in Google Maps <svg class="arrow" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a>
+          <a class="btn btn--ghost" href="https://maps.apple.com/?daddr=13220+Long+Green+Pike,+Hydes,+MD+21082" rel="noopener" target="_blank">Apple Maps</a>
+        </div>
+      </div>
+      <div class="map">
+        <iframe title="Map showing Horse &amp; Hive Farm, 13220 Long Green Pike, Hydes, Maryland" src="https://www.google.com/maps?q=13220+Long+Green+Pike,+Hydes,+MD+21082&amp;z=13&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="faq" aria-labelledby="faq-title">
+    <div class="container grid-2">
+      <div class="stack sticky" style="--stack:1.5rem">
+        <p class="eyebrow">Questions</p>
+        <h2 class="h1" id="faq-title">Frequently <em>asked.</em></h2>
+        <p class="muted">More answers on the <a href="lessons.html">lessons</a>, <a href="boarding.html">boarding</a> and <a href="camp.html">camp</a> pages.</p>
+      </div>
+      <div class="faq">
+        <details>
+          <summary>How do I book a first lesson?</summary>
+          <div class="answer"><p>Call <a href="{{phoneHref}}">{{phone}}</a> or send an enquiry above. Every new student starts with an introductory lesson, and we recommend it be a private one.</p></div>
+        </details>
+        <details>
+          <summary>Can I just drop by to look around?</summary>
+          <div class="answer"><p>We're a working farm, so please call ahead. We'd be happy to find a good time for you to visit.</p></div>
+        </details>
+        <details>
+          <summary>What ages do you teach?</summary>
+          <div class="answer"><p>Riders from 5 years old through adult. Summer camp is for ages 6 and up.</p></div>
+        </details>
+        <details>
+          <summary>Do I need my own helmet?</summary>
+          <div class="answer"><p>An approved riding helmet is required, but if you don't have one yet, we'll lend you one.</p></div>
+        </details>
+        <details>
+          <summary>Do you sell honey and eggs?</summary>
+          <div class="answer"><p>When available! Both are harvested on the farm from our own bees and chickens, so supplies are seasonal and limited. Ask us what's in stock.</p></div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+</main>
+{{> footer}}

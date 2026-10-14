@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /photo-lab.html
+
+Sitemap: https://horseandhive.com/sitemap.xml

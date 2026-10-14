@@ -1,0 +1,24 @@
+---
+title: Page not found
+description: Sorry, we couldn't find that page. Head back to Horse & Hive Farm.
+nav: none
+robots: noindex
+base: /
+---
+{{> head}}
+{{> header}}
+<main id="main">
+  <section class="page-hero" aria-labelledby="page-title" style="min-height:100svh">
+    <div class="hero-media">{{pic page-about sizes="100vw" eager}}</div>
+    <div class="container hero-content">
+      <p class="error-code fade-up" aria-hidden="true">404</p>
+      <h1 class="h1 fade-up" id="page-title" style="--d:.2s">This trail <em>doesn't go anywhere.</em></h1>
+      <p class="hero-sub fade-up" style="--d:.35s">The page you're looking for has wandered off to graze. Let's get you back to the barn.</p>
+      <div class="btn-row fade-up" style="--d:.5s">
+        <a class="btn btn--honey" href="./">Back to the homepage <svg class="arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        <a class="btn btn--ghost" href="contact.html">Contact us</a>
+      </div>
+    </div>
+  </section>
+</main>
+{{> footer}}
