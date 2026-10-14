@@ -5,6 +5,7 @@
   "scripts": {
     "photos": "node tools/photos.mjs",
     "build": "node tools/build.mjs",
+    "build:dist": "node tools/build.mjs && node tools/dist.mjs",
     "dev": "node tools/build.mjs && npx --yes serve -l 5173 .",
     "check": "node tools/check.mjs"
   },
