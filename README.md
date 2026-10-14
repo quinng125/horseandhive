@@ -67,8 +67,21 @@ docs/             design research and the owner content checklist
 
 ## Deploying
 
-- **GitHub Pages:** Settings → Pages → deploy from the `main` branch, root folder. `.nojekyll` is included. Point the `horseandhive.com` DNS at GitHub Pages and add a `CNAME` file containing `horseandhive.com`.
-- **Netlify / Cloudflare Pages:** no build command needed (the built files are committed); publish directory is the repository root.
+### Vercel (recommended)
+
+The repo is ready for Vercel. `vercel.json` handles the build, output folder, security headers and caching, so there's nothing to configure.
+
+1. Go to [vercel.com/new](https://vercel.com/new) and sign in with GitHub.
+2. Import **quinng125/horseandhive**. If it isn't listed, choose "Adjust GitHub App Permissions" and grant access to the repo.
+3. Leave every setting as detected (Framework preset "Other"; the build command and output directory come from `vercel.json`) and click **Deploy**.
+4. To use the real domain, open Project → Settings → Domains, add `horseandhive.com` and `www.horseandhive.com`, and update the DNS records at the domain registrar as Vercel instructs.
+
+Every push to the production branch redeploys automatically, and other branches get preview URLs. On Vercel, the build runs `npm run build:dist`, which rebuilds the pages and collects only the website files into `dist/`. Source, tools, docs and original photos are never published.
+
+### Other hosts
+
+- **Netlify / Cloudflare Pages:** build command `npm run build:dist`, publish directory `dist`.
+- **GitHub Pages:** deploy from the repository root (built pages are committed; `.nojekyll` is included).
 
 The contact form opens the visitor's email app with a ready-to-send message to `hhfarm2012@gmail.com`, so it needs no server. To collect submissions in an inbox instead, swap in a form service such as Netlify Forms or Formspree.
 
